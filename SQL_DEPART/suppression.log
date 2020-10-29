@@ -1,0 +1,1361 @@
+SQL> 
+SQL> @suppression_contraintes.sql
+SQL> REM Suppression des sequences
+SQL> 
+SQL> DROP SEQUENCE JEU_SEQ;
+
+Erreur commençant à la ligne: 3 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_contraintes.sql
+Dans la commande -
+DROP SEQUENCE JEU_SEQ
+Rapport d'erreur -
+ORA-02289: la séquence n'existe pas
+02289. 00000 -  "sequence does not exist"
+*Cause:    The specified sequence does not exist, or the user does
+           not have the required privilege to perform this operation.
+*Action:   Make sure the sequence name is correct, and that you have
+           the right to perform the desired operation on this sequence.
+SQL> DROP SEQUENCE CONTENU_SEQ;
+
+Erreur commençant à la ligne: 4 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_contraintes.sql
+Dans la commande -
+DROP SEQUENCE CONTENU_SEQ
+Rapport d'erreur -
+ORA-02289: la séquence n'existe pas
+02289. 00000 -  "sequence does not exist"
+*Cause:    The specified sequence does not exist, or the user does
+           not have the required privilege to perform this operation.
+*Action:   Make sure the sequence name is correct, and that you have
+           the right to perform the desired operation on this sequence.
+SQL> DROP SEQUENCE SUCCES_SEQ;
+
+Erreur commençant à la ligne: 5 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_contraintes.sql
+Dans la commande -
+DROP SEQUENCE SUCCES_SEQ
+Rapport d'erreur -
+ORA-02289: la séquence n'existe pas
+02289. 00000 -  "sequence does not exist"
+*Cause:    The specified sequence does not exist, or the user does
+           not have the required privilege to perform this operation.
+*Action:   Make sure the sequence name is correct, and that you have
+           the right to perform the desired operation on this sequence.
+SQL> DROP SEQUENCE PERIODE_SEQ;
+
+Erreur commençant à la ligne: 6 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_contraintes.sql
+Dans la commande -
+DROP SEQUENCE PERIODE_SEQ
+Rapport d'erreur -
+ORA-02289: la séquence n'existe pas
+02289. 00000 -  "sequence does not exist"
+*Cause:    The specified sequence does not exist, or the user does
+           not have the required privilege to perform this operation.
+*Action:   Make sure the sequence name is correct, and that you have
+           the right to perform the desired operation on this sequence.
+SQL> DROP SEQUENCE JOUEUR_SEQ;
+
+Erreur commençant à la ligne: 7 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_contraintes.sql
+Dans la commande -
+DROP SEQUENCE JOUEUR_SEQ
+Rapport d'erreur -
+ORA-02289: la séquence n'existe pas
+02289. 00000 -  "sequence does not exist"
+*Cause:    The specified sequence does not exist, or the user does
+           not have the required privilege to perform this operation.
+*Action:   Make sure the sequence name is correct, and that you have
+           the right to perform the desired operation on this sequence.
+SQL> DROP SEQUENCE SUIVI_AMITIE_SEQ;
+
+Erreur commençant à la ligne: 8 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_contraintes.sql
+Dans la commande -
+DROP SEQUENCE SUIVI_AMITIE_SEQ
+Rapport d'erreur -
+ORA-02289: la séquence n'existe pas
+02289. 00000 -  "sequence does not exist"
+*Cause:    The specified sequence does not exist, or the user does
+           not have the required privilege to perform this operation.
+*Action:   Make sure the sequence name is correct, and that you have
+           the right to perform the desired operation on this sequence.
+SQL> DROP SEQUENCE SUIVI_RESEAU_SEQ;
+
+Erreur commençant à la ligne: 9 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_contraintes.sql
+Dans la commande -
+DROP SEQUENCE SUIVI_RESEAU_SEQ
+Rapport d'erreur -
+ORA-02289: la séquence n'existe pas
+02289. 00000 -  "sequence does not exist"
+*Cause:    The specified sequence does not exist, or the user does
+           not have the required privilege to perform this operation.
+*Action:   Make sure the sequence name is correct, and that you have
+           the right to perform the desired operation on this sequence.
+SQL> 
+SQL> REM SUPPRESSION CHAMPS UNIQUE
+SQL> 
+SQL> ALTER TABLE JOUEUR DROP CONSTRAINT JOUEUR_UNIQUE;
+
+Erreur commençant à la ligne: 13 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_contraintes.sql
+Dans la commande -
+ALTER TABLE JOUEUR DROP CONSTRAINT JOUEUR_UNIQUE
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> 
+SQL> REM SUPPRESSION DES CONTRAINTES
+SQL> 
+SQL> ALTER TABLE CONTENU DROP CONSTRAINT CHECK_CONTENU_TYPE;
+
+Erreur commençant à la ligne: 17 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_contraintes.sql
+Dans la commande -
+ALTER TABLE CONTENU DROP CONSTRAINT CHECK_CONTENU_TYPE
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> ALTER TABLE JOUEUR DROP CONSTRAINT CHECK_JOUEUR_ACTIF;
+
+Erreur commençant à la ligne: 18 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_contraintes.sql
+Dans la commande -
+ALTER TABLE JOUEUR DROP CONSTRAINT CHECK_JOUEUR_ACTIF
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> ALTER TABLE RESEAU DROP CONSTRAINT CHECK_RESEAU_ACTIF;
+
+Erreur commençant à la ligne: 19 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_contraintes.sql
+Dans la commande -
+ALTER TABLE RESEAU DROP CONSTRAINT CHECK_RESEAU_ACTIF
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> ALTER TABLE SUIVI_RESEAU DROP CONSTRAINT CHECK_SUIVI_RESEAU_ACTION;
+
+Erreur commençant à la ligne: 20 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_contraintes.sql
+Dans la commande -
+ALTER TABLE SUIVI_RESEAU DROP CONSTRAINT CHECK_SUIVI_RESEAU_ACTION
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> ALTER TABLE SUCCES DROP CONSTRAINT CHECK_SUCCES_VALEUR;
+
+Erreur commençant à la ligne: 21 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_contraintes.sql
+Dans la commande -
+ALTER TABLE SUCCES DROP CONSTRAINT CHECK_SUCCES_VALEUR
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> ALTER TABLE SUCCES_CALCULE DROP CONSTRAINT CHECK_SUCCES_C_MAX_REQUIS;
+
+Erreur commençant à la ligne: 22 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_contraintes.sql
+Dans la commande -
+ALTER TABLE SUCCES_CALCULE DROP CONSTRAINT CHECK_SUCCES_C_MAX_REQUIS
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> ALTER TABLE SUCCES_EN_COURS DROP CONSTRAINT CHECK_SUCCES_EN_COURS_COMPTEUR;
+
+Erreur commençant à la ligne: 23 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_contraintes.sql
+Dans la commande -
+ALTER TABLE SUCCES_EN_COURS DROP CONSTRAINT CHECK_SUCCES_EN_COURS_COMPTEUR
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> ALTER TABLE PERIODE DROP CONSTRAINT CHECK_PERIODE_PRIX;
+
+Erreur commençant à la ligne: 24 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_contraintes.sql
+Dans la commande -
+ALTER TABLE PERIODE DROP CONSTRAINT CHECK_PERIODE_PRIX
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> 
+SQL> REM SUPPRESSION CLÉS ÉTRANGERES
+SQL> 
+SQL> ALTER TABLE GENRE DROP CONSTRAINT GENRE_FK;
+
+Erreur commençant à la ligne: 28 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_contraintes.sql
+Dans la commande -
+ALTER TABLE GENRE DROP CONSTRAINT GENRE_FK
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> ALTER TABLE SOUS_GENRE_JEU DROP CONSTRAINT SOUS_GENRE_JEU_SOUS_GENRE_FK;
+
+Erreur commençant à la ligne: 29 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_contraintes.sql
+Dans la commande -
+ALTER TABLE SOUS_GENRE_JEU DROP CONSTRAINT SOUS_GENRE_JEU_SOUS_GENRE_FK
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> ALTER TABLE SOUS_GENRE_JEU DROP	CONSTRAINT SOUS_GENRE_JEU_ID_JEU_FK;
+
+Erreur commençant à la ligne: 30 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_contraintes.sql
+Dans la commande -
+ALTER TABLE SOUS_GENRE_JEU DROP	CONSTRAINT SOUS_GENRE_JEU_ID_JEU_FK
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> ALTER TABLE JEU DROP CONSTRAINT JEU_CODE_ESRB_FK;
+
+Erreur commençant à la ligne: 31 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_contraintes.sql
+Dans la commande -
+ALTER TABLE JEU DROP CONSTRAINT JEU_CODE_ESRB_FK
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> ALTER TABLE JEU DROP CONSTRAINT JEU_CODE_GENRE_FK;
+
+Erreur commençant à la ligne: 32 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_contraintes.sql
+Dans la commande -
+ALTER TABLE JEU DROP CONSTRAINT JEU_CODE_GENRE_FK
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> ALTER TABLE CONTENU DROP CONSTRAINT CONTENU_FK;
+
+Erreur commençant à la ligne: 33 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_contraintes.sql
+Dans la commande -
+ALTER TABLE CONTENU DROP CONSTRAINT CONTENU_FK
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> ALTER TABLE CONTENU_POSSEDE DROP CONSTRAINT CONTENU_POSSEDE_ID_CONTENU_FK;
+
+Erreur commençant à la ligne: 34 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_contraintes.sql
+Dans la commande -
+ALTER TABLE CONTENU_POSSEDE DROP CONSTRAINT CONTENU_POSSEDE_ID_CONTENU_FK
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> ALTER TABLE CONTENU_POSSEDE DROP CONSTRAINT CONTENU_POSSEDE_NO_JOUEUR_FK;
+
+Erreur commençant à la ligne: 35 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_contraintes.sql
+Dans la commande -
+ALTER TABLE CONTENU_POSSEDE DROP CONSTRAINT CONTENU_POSSEDE_NO_JOUEUR_FK
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> ALTER TABLE SUCCES DROP CONSTRAINT SUCCES_FK;
+
+Erreur commençant à la ligne: 36 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_contraintes.sql
+Dans la commande -
+ALTER TABLE SUCCES DROP CONSTRAINT SUCCES_FK
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> ALTER TABLE SUCCES_CALCULE DROP CONSTRAINT SUCCES_CALCULE_FK;
+
+Erreur commençant à la ligne: 37 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_contraintes.sql
+Dans la commande -
+ALTER TABLE SUCCES_CALCULE DROP CONSTRAINT SUCCES_CALCULE_FK
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> ALTER TABLE SUCCES_REALISE DROP CONSTRAINT SUCCES_REALISE_CONTENU_FK;
+
+Erreur commençant à la ligne: 38 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_contraintes.sql
+Dans la commande -
+ALTER TABLE SUCCES_REALISE DROP CONSTRAINT SUCCES_REALISE_CONTENU_FK
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> ALTER TABLE SUCCES_REALISE DROP CONSTRAINT SUCCES_REALISE_ID_SUCCES_FK;
+
+Erreur commençant à la ligne: 39 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_contraintes.sql
+Dans la commande -
+ALTER TABLE SUCCES_REALISE DROP CONSTRAINT SUCCES_REALISE_ID_SUCCES_FK
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> ALTER TABLE SUCCES_EN_COURS DROP CONSTRAINT SUCCES_EN_COURS_CONTENU_FK;
+
+Erreur commençant à la ligne: 40 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_contraintes.sql
+Dans la commande -
+ALTER TABLE SUCCES_EN_COURS DROP CONSTRAINT SUCCES_EN_COURS_CONTENU_FK
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> ALTER TABLE SUCCES_EN_COURS DROP CONSTRAINT SUCCES_EN_COURS_ID_SUCCES_FK;
+
+Erreur commençant à la ligne: 41 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_contraintes.sql
+Dans la commande -
+ALTER TABLE SUCCES_EN_COURS DROP CONSTRAINT SUCCES_EN_COURS_ID_SUCCES_FK
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> ALTER TABLE PERIODE DROP CONSTRAINT PERIODE_FK;
+
+Erreur commençant à la ligne: 42 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_contraintes.sql
+Dans la commande -
+ALTER TABLE PERIODE DROP CONSTRAINT PERIODE_FK
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> ALTER TABLE PERIODE_FORFAIT_JOUEUR DROP CONSTRAINT PERIODE_FORF_J_ID_PERIODE_FK;
+
+Erreur commençant à la ligne: 43 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_contraintes.sql
+Dans la commande -
+ALTER TABLE PERIODE_FORFAIT_JOUEUR DROP CONSTRAINT PERIODE_FORF_J_ID_PERIODE_FK
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> ALTER TABLE PERIODE_FORFAIT_JOUEUR DROP CONSTRAINT PERIODE_FORF_J_NO_JOUEUR_FK;
+
+Erreur commençant à la ligne: 44 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_contraintes.sql
+Dans la commande -
+ALTER TABLE PERIODE_FORFAIT_JOUEUR DROP CONSTRAINT PERIODE_FORF_J_NO_JOUEUR_FK
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> ALTER TABLE ABONNEMENT_RESEAU DROP CONSTRAINT ABONNEMENT_CODE_RESEAU_FK;
+
+Erreur commençant à la ligne: 45 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_contraintes.sql
+Dans la commande -
+ALTER TABLE ABONNEMENT_RESEAU DROP CONSTRAINT ABONNEMENT_CODE_RESEAU_FK
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> ALTER TABLE ABONNEMENT_RESEAU DROP CONSTRAINT ABONNEMENT_NO_JOUEUR_FK;
+
+Erreur commençant à la ligne: 46 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_contraintes.sql
+Dans la commande -
+ALTER TABLE ABONNEMENT_RESEAU DROP CONSTRAINT ABONNEMENT_NO_JOUEUR_FK
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> ALTER TABLE SUIVI_RESEAU DROP CONSTRAINT SUIVI_RESEAU_CODE_RESEAU_FK;
+
+Erreur commençant à la ligne: 47 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_contraintes.sql
+Dans la commande -
+ALTER TABLE SUIVI_RESEAU DROP CONSTRAINT SUIVI_RESEAU_CODE_RESEAU_FK
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> ALTER TABLE SUIVI_RESEAU DROP CONSTRAINT SUIVI_RESEAU_NO_JOUEUR_FK;
+
+Erreur commençant à la ligne: 48 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_contraintes.sql
+Dans la commande -
+ALTER TABLE SUIVI_RESEAU DROP CONSTRAINT SUIVI_RESEAU_NO_JOUEUR_FK
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> ALTER TABLE AMI DROP CONSTRAINT AMI_NO_JOUEUR_INVITANT_FK;
+
+Erreur commençant à la ligne: 49 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_contraintes.sql
+Dans la commande -
+ALTER TABLE AMI DROP CONSTRAINT AMI_NO_JOUEUR_INVITANT_FK
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> ALTER TABLE AMI DROP CONSTRAINT AMI_NO_JOUEUR_INVITE_FK;
+
+Erreur commençant à la ligne: 50 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_contraintes.sql
+Dans la commande -
+ALTER TABLE AMI DROP CONSTRAINT AMI_NO_JOUEUR_INVITE_FK
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> ALTER TABLE AMI DROP CONSTRAINT AMI_CODE_STATUT_FK;
+
+Erreur commençant à la ligne: 51 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_contraintes.sql
+Dans la commande -
+ALTER TABLE AMI DROP CONSTRAINT AMI_CODE_STATUT_FK
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> ALTER TABLE SUIVI_AMITIE DROP CONSTRAINT SUIVI_AMI_NO_J_INVITANT_FK;
+
+Erreur commençant à la ligne: 52 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_contraintes.sql
+Dans la commande -
+ALTER TABLE SUIVI_AMITIE DROP CONSTRAINT SUIVI_AMI_NO_J_INVITANT_FK
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> ALTER TABLE SUIVI_AMITIE DROP CONSTRAINT SUIVI_AMI_NO_J_INVITE_FK;
+
+Erreur commençant à la ligne: 53 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_contraintes.sql
+Dans la commande -
+ALTER TABLE SUIVI_AMITIE DROP CONSTRAINT SUIVI_AMI_NO_J_INVITE_FK
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> ALTER TABLE SUIVI_AMITIE DROP CONSTRAINT SUIVI_AMITIE_CODE_STATUT_FK;
+
+Erreur commençant à la ligne: 54 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_contraintes.sql
+Dans la commande -
+ALTER TABLE SUIVI_AMITIE DROP CONSTRAINT SUIVI_AMITIE_CODE_STATUT_FK
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> 
+SQL> 
+SQL> REM SUPPRESSION CLÉS PRIMAIRES
+SQL> 
+SQL> ALTER TABLE JOUEUR DROP CONSTRAINT JOUEUR_PK;
+
+Erreur commençant à la ligne: 59 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_contraintes.sql
+Dans la commande -
+ALTER TABLE JOUEUR DROP CONSTRAINT JOUEUR_PK
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> ALTER TABLE ESRB DROP CONSTRAINT ESRB_PK;
+
+Erreur commençant à la ligne: 60 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_contraintes.sql
+Dans la commande -
+ALTER TABLE ESRB DROP CONSTRAINT ESRB_PK
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> ALTER TABLE GENRE DROP CONSTRAINT GENRE_PK;
+
+Erreur commençant à la ligne: 61 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_contraintes.sql
+Dans la commande -
+ALTER TABLE GENRE DROP CONSTRAINT GENRE_PK
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> ALTER TABLE SOUS_GENRE_JEU DROP CONSTRAINT SOUS_GENRE_JEU_PK;
+
+Erreur commençant à la ligne: 62 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_contraintes.sql
+Dans la commande -
+ALTER TABLE SOUS_GENRE_JEU DROP CONSTRAINT SOUS_GENRE_JEU_PK
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> ALTER TABLE JEU DROP CONSTRAINT JEU_PK;
+
+Erreur commençant à la ligne: 63 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_contraintes.sql
+Dans la commande -
+ALTER TABLE JEU DROP CONSTRAINT JEU_PK
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> ALTER TABLE CONTENU DROP CONSTRAINT CONTENU_PK;
+
+Erreur commençant à la ligne: 64 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_contraintes.sql
+Dans la commande -
+ALTER TABLE CONTENU DROP CONSTRAINT CONTENU_PK
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> ALTER TABLE CONTENU_POSSEDE DROP CONSTRAINT CONTENU_POSSEDE_PK;
+
+Erreur commençant à la ligne: 65 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_contraintes.sql
+Dans la commande -
+ALTER TABLE CONTENU_POSSEDE DROP CONSTRAINT CONTENU_POSSEDE_PK
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> ALTER TABLE SUCCES DROP CONSTRAINT SUCCES_PK;
+
+Erreur commençant à la ligne: 66 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_contraintes.sql
+Dans la commande -
+ALTER TABLE SUCCES DROP CONSTRAINT SUCCES_PK
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> ALTER TABLE SUCCES_CALCULE DROP CONSTRAINT SUCCES_CALCULE_PK;
+
+Erreur commençant à la ligne: 67 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_contraintes.sql
+Dans la commande -
+ALTER TABLE SUCCES_CALCULE DROP CONSTRAINT SUCCES_CALCULE_PK
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> ALTER TABLE SUCCES_REALISE DROP CONSTRAINT SUCCES_REALISE_PK;
+
+Erreur commençant à la ligne: 68 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_contraintes.sql
+Dans la commande -
+ALTER TABLE SUCCES_REALISE DROP CONSTRAINT SUCCES_REALISE_PK
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> ALTER TABLE SUCCES_EN_COURS DROP CONSTRAINT SUCCES_EN_COURS_PK;
+
+Erreur commençant à la ligne: 69 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_contraintes.sql
+Dans la commande -
+ALTER TABLE SUCCES_EN_COURS DROP CONSTRAINT SUCCES_EN_COURS_PK
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> ALTER TABLE FORFAIT DROP CONSTRAINT FORFAIT_PK;
+
+Erreur commençant à la ligne: 70 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_contraintes.sql
+Dans la commande -
+ALTER TABLE FORFAIT DROP CONSTRAINT FORFAIT_PK
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> ALTER TABLE PERIODE DROP CONSTRAINT PERIODE_PK;
+
+Erreur commençant à la ligne: 71 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_contraintes.sql
+Dans la commande -
+ALTER TABLE PERIODE DROP CONSTRAINT PERIODE_PK
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> ALTER TABLE PERIODE_FORFAIT_JOUEUR DROP CONSTRAINT PERIODE_FORFAIT_JOUEUR_PK;
+
+Erreur commençant à la ligne: 72 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_contraintes.sql
+Dans la commande -
+ALTER TABLE PERIODE_FORFAIT_JOUEUR DROP CONSTRAINT PERIODE_FORFAIT_JOUEUR_PK
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> ALTER TABLE RESEAU DROP CONSTRAINT RESEAU_PK;
+
+Erreur commençant à la ligne: 73 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_contraintes.sql
+Dans la commande -
+ALTER TABLE RESEAU DROP CONSTRAINT RESEAU_PK
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> ALTER TABLE ABONNEMENT_RESEAU DROP CONSTRAINT ABONNEMENT_RESEAU_PK;
+
+Erreur commençant à la ligne: 74 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_contraintes.sql
+Dans la commande -
+ALTER TABLE ABONNEMENT_RESEAU DROP CONSTRAINT ABONNEMENT_RESEAU_PK
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> ALTER TABLE SUIVI_RESEAU DROP CONSTRAINT SUIVI_RESEAU_PK;
+
+Erreur commençant à la ligne: 75 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_contraintes.sql
+Dans la commande -
+ALTER TABLE SUIVI_RESEAU DROP CONSTRAINT SUIVI_RESEAU_PK
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> ALTER TABLE AMI DROP CONSTRAINT AMI_PK;
+
+Erreur commençant à la ligne: 76 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_contraintes.sql
+Dans la commande -
+ALTER TABLE AMI DROP CONSTRAINT AMI_PK
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> ALTER TABLE STATUT_AMITIE DROP CONSTRAINT STATUT_AMITIE_PK;
+
+Erreur commençant à la ligne: 77 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_contraintes.sql
+Dans la commande -
+ALTER TABLE STATUT_AMITIE DROP CONSTRAINT STATUT_AMITIE_PK
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> ALTER TABLE SUIVI_AMITIE DROP CONSTRAINT SUIVI_AMITIE_PK;
+
+Erreur commençant à la ligne: 78 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_contraintes.sql
+Dans la commande -
+ALTER TABLE SUIVI_AMITIE DROP CONSTRAINT SUIVI_AMITIE_PK
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> @suppression_scripts.sql
+SQL> REM CREATION DES SCRIPTS
+SQL> 
+SQL> @scripts/suppression_declencheurs.sql
+SQL> REM SUPPRESSION DES TRIGGERS
+SQL> 
+SQL> REM TRIGGER DES SEQUENCES
+SQL> 
+SQL> DROP TRIGGER JEU_ID_TRG;
+
+Erreur commençant à la ligne: 5 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\scripts\suppression_declencheurs.sql
+Dans la commande -
+DROP TRIGGER JEU_ID_TRG
+Rapport d'erreur -
+ORA-04080: déclencheur 'JEU_ID_TRG' n'existe pas
+04080. 00000 -  "trigger '%s' does not exist"
+*Cause:    The TRIGGER name is invalid.
+*Action:   Check the trigger name.
+SQL> DROP TRIGGER CONTENU_ID_TRG;
+
+Erreur commençant à la ligne: 6 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\scripts\suppression_declencheurs.sql
+Dans la commande -
+DROP TRIGGER CONTENU_ID_TRG
+Rapport d'erreur -
+ORA-04080: déclencheur 'CONTENU_ID_TRG' n'existe pas
+04080. 00000 -  "trigger '%s' does not exist"
+*Cause:    The TRIGGER name is invalid.
+*Action:   Check the trigger name.
+SQL> DROP TRIGGER SUCCES_ID_TRG;
+
+Erreur commençant à la ligne: 7 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\scripts\suppression_declencheurs.sql
+Dans la commande -
+DROP TRIGGER SUCCES_ID_TRG
+Rapport d'erreur -
+ORA-04080: déclencheur 'SUCCES_ID_TRG' n'existe pas
+04080. 00000 -  "trigger '%s' does not exist"
+*Cause:    The TRIGGER name is invalid.
+*Action:   Check the trigger name.
+SQL> DROP TRIGGER PERIODE_ID_TRG;
+
+Erreur commençant à la ligne: 8 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\scripts\suppression_declencheurs.sql
+Dans la commande -
+DROP TRIGGER PERIODE_ID_TRG
+Rapport d'erreur -
+ORA-04080: déclencheur 'PERIODE_ID_TRG' n'existe pas
+04080. 00000 -  "trigger '%s' does not exist"
+*Cause:    The TRIGGER name is invalid.
+*Action:   Check the trigger name.
+SQL> DROP TRIGGER JOUEUR_ID_TRG;
+
+Erreur commençant à la ligne: 9 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\scripts\suppression_declencheurs.sql
+Dans la commande -
+DROP TRIGGER JOUEUR_ID_TRG
+Rapport d'erreur -
+ORA-04080: déclencheur 'JOUEUR_ID_TRG' n'existe pas
+04080. 00000 -  "trigger '%s' does not exist"
+*Cause:    The TRIGGER name is invalid.
+*Action:   Check the trigger name.
+SQL> DROP TRIGGER SUIVI_AMITIE_ID_TRG;
+
+Erreur commençant à la ligne: 10 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\scripts\suppression_declencheurs.sql
+Dans la commande -
+DROP TRIGGER SUIVI_AMITIE_ID_TRG
+Rapport d'erreur -
+ORA-04080: déclencheur 'SUIVI_AMITIE_ID_TRG' n'existe pas
+04080. 00000 -  "trigger '%s' does not exist"
+*Cause:    The TRIGGER name is invalid.
+*Action:   Check the trigger name.
+SQL> DROP TRIGGER SUIVI_RESEAU_ID_TRG;
+
+Erreur commençant à la ligne: 11 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\scripts\suppression_declencheurs.sql
+Dans la commande -
+DROP TRIGGER SUIVI_RESEAU_ID_TRG
+Rapport d'erreur -
+ORA-04080: déclencheur 'SUIVI_RESEAU_ID_TRG' n'existe pas
+04080. 00000 -  "trigger '%s' does not exist"
+*Cause:    The TRIGGER name is invalid.
+*Action:   Check the trigger name.
+SQL> 
+SQL> DROP TRIGGER NOUVEAU_SUCCES_EN_COURS_TRG 
+  2  DROP TRIGGER GENRE_TRG
+  3  DROP TRIGGER SUIVI_RESEAU_TRG 
+  4  DROP TRIGGER SUIVI_ABONNEMENT_RESEAU_TRG 
+  5  DROP TRIGGER SUIVI_AMI_TRG 
+
+Erreur commençant à la ligne: 13 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\scripts\suppression_declencheurs.sql
+Dans la commande -
+DROP TRIGGER NOUVEAU_SUCCES_EN_COURS_TRG 
+DROP TRIGGER GENRE_TRG
+DROP TRIGGER SUIVI_RESEAU_TRG 
+DROP TRIGGER SUIVI_ABONNEMENT_RESEAU_TRG 
+DROP TRIGGER SUIVI_AMI_TRG
+Rapport d'erreur -
+ORA-00933: la commande SQL ne se termine pas correctement
+00933. 00000 -  "SQL command not properly ended"
+*Cause:    
+*Action:
+SQL> @scripts/suppression_procedures.sql
+SQL> REM SUPPRESSION DES PROCEDURES
+SQL> 
+SQL> DROP PROCEDURE ajoutForfait;
+
+Erreur commençant à la ligne: 3 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\scripts\suppression_procedures.sql
+Dans la commande -
+DROP PROCEDURE ajoutForfait
+Rapport d'erreur -
+ORA-04043: objet AJOUTFORFAIT inexistant
+04043. 00000 -  "object %s does not exist"
+*Cause:    An object name was specified that was not recognized by the system.
+           There are several possible causes:
+           - An invalid name for a table, view, sequence, procedure, function,
+           package, or package body was entered. Since the system could not
+           recognize the invalid name, it responded with the message that the
+           named object does not exist.
+           - An attempt was made to rename an index or a cluster, or some
+           other object that cannot be renamed.
+*Action:   Check the spelling of the named object and rerun the code. (Valid
+           names of tables, views, functions, etc. can be listed by querying
+           the data dictionary.)
+SQL> DROP PROCEDURE prolongationForfait;
+
+Erreur commençant à la ligne: 4 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\scripts\suppression_procedures.sql
+Dans la commande -
+DROP PROCEDURE prolongationForfait
+Rapport d'erreur -
+ORA-04043: objet PROLONGATIONFORFAIT inexistant
+04043. 00000 -  "object %s does not exist"
+*Cause:    An object name was specified that was not recognized by the system.
+           There are several possible causes:
+           - An invalid name for a table, view, sequence, procedure, function,
+           package, or package body was entered. Since the system could not
+           recognize the invalid name, it responded with the message that the
+           named object does not exist.
+           - An attempt was made to rename an index or a cluster, or some
+           other object that cannot be renamed.
+*Action:   Check the spelling of the named object and rerun the code. (Valid
+           names of tables, views, functions, etc. can be listed by querying
+           the data dictionary.)
+SQL> DROP PROCEDURE ajusterPromotion;
+
+Erreur commençant à la ligne: 5 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\scripts\suppression_procedures.sql
+Dans la commande -
+DROP PROCEDURE ajusterPromotion
+Rapport d'erreur -
+ORA-04043: objet AJUSTERPROMOTION inexistant
+04043. 00000 -  "object %s does not exist"
+*Cause:    An object name was specified that was not recognized by the system.
+           There are several possible causes:
+           - An invalid name for a table, view, sequence, procedure, function,
+           package, or package body was entered. Since the system could not
+           recognize the invalid name, it responded with the message that the
+           named object does not exist.
+           - An attempt was made to rename an index or a cluster, or some
+           other object that cannot be renamed.
+*Action:   Check the spelling of the named object and rerun the code. (Valid
+           names of tables, views, functions, etc. can be listed by querying
+           the data dictionary.)
+SQL> DROP PROCEDURE suppressionJeu;
+
+Erreur commençant à la ligne: 6 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\scripts\suppression_procedures.sql
+Dans la commande -
+DROP PROCEDURE suppressionJeu
+Rapport d'erreur -
+ORA-04043: objet SUPPRESSIONJEU inexistant
+04043. 00000 -  "object %s does not exist"
+*Cause:    An object name was specified that was not recognized by the system.
+           There are several possible causes:
+           - An invalid name for a table, view, sequence, procedure, function,
+           package, or package body was entered. Since the system could not
+           recognize the invalid name, it responded with the message that the
+           named object does not exist.
+           - An attempt was made to rename an index or a cluster, or some
+           other object that cannot be renamed.
+*Action:   Check the spelling of the named object and rerun the code. (Valid
+           names of tables, views, functions, etc. can be listed by querying
+           the data dictionary.)
+SQL> @scripts/suppression_fonctions.sql
+SQL> REM SUPPRESSION DES FONCTIONS
+SQL> 
+SQL> DROP FUNCTION succesPlusRealise;
+
+Erreur commençant à la ligne: 3 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\scripts\suppression_fonctions.sql
+Dans la commande -
+DROP FUNCTION succesPlusRealise
+Rapport d'erreur -
+ORA-04043: objet SUCCESPLUSREALISE inexistant
+04043. 00000 -  "object %s does not exist"
+*Cause:    An object name was specified that was not recognized by the system.
+           There are several possible causes:
+           - An invalid name for a table, view, sequence, procedure, function,
+           package, or package body was entered. Since the system could not
+           recognize the invalid name, it responded with the message that the
+           named object does not exist.
+           - An attempt was made to rename an index or a cluster, or some
+           other object that cannot be renamed.
+*Action:   Check the spelling of the named object and rerun the code. (Valid
+           names of tables, views, functions, etc. can be listed by querying
+           the data dictionary.)
+SQL> DROP FUNCTION validerGenre 
+  2  DROP FUNCTION joueurLePlusPopulaire;
+
+Erreur commençant à la ligne: 4 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\scripts\suppression_fonctions.sql
+Dans la commande -
+DROP FUNCTION validerGenre 
+DROP FUNCTION joueurLePlusPopulaire
+Rapport d'erreur -
+ORA-00933: la commande SQL ne se termine pas correctement
+00933. 00000 -  "SQL command not properly ended"
+*Cause:    
+*Action:
+SQL> DROP FUNCTION jeuLePlusPopulaire;
+
+Erreur commençant à la ligne: 6 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\scripts\suppression_fonctions.sql
+Dans la commande -
+DROP FUNCTION jeuLePlusPopulaire
+Rapport d'erreur -
+ORA-04043: objet JEULEPLUSPOPULAIRE inexistant
+04043. 00000 -  "object %s does not exist"
+*Cause:    An object name was specified that was not recognized by the system.
+           There are several possible causes:
+           - An invalid name for a table, view, sequence, procedure, function,
+           package, or package body was entered. Since the system could not
+           recognize the invalid name, it responded with the message that the
+           named object does not exist.
+           - An attempt was made to rename an index or a cluster, or some
+           other object that cannot be renamed.
+*Action:   Check the spelling of the named object and rerun the code. (Valid
+           names of tables, views, functions, etc. can be listed by querying
+           the data dictionary.)
+SQL> @scripts/suppression_vues.sql
+SQL> REM SUPPRESSION DES VUES
+SQL> 
+SQL> DROP VIEW mesSucces;
+
+Erreur commençant à la ligne: 3 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\scripts\suppression_vues.sql
+Dans la commande -
+DROP VIEW mesSucces
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> DROP VIEW suiviReseau;
+
+Erreur commençant à la ligne: 4 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\scripts\suppression_vues.sql
+Dans la commande -
+DROP VIEW suiviReseau
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> DROP VIEW suiviReseauJoueur;
+
+Erreur commençant à la ligne: 5 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\scripts\suppression_vues.sql
+Dans la commande -
+DROP VIEW suiviReseauJoueur
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> DROP VIEW suiviAmitie;
+
+Erreur commençant à la ligne: 6 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\scripts\suppression_vues.sql
+Dans la commande -
+DROP VIEW suiviAmitie
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> @suppression_donnees.sql
+SQL> REM SUPPRESSION DES DONNÉES
+SQL> 
+SQL> DELETE FROM SUIVI_AMITIE;
+
+Erreur commençant à la ligne: 3 Fichier @ file:/C:/Users/HansIV4/Documents/git repos/TP2_BD/TP2_BD/SQL_DEPART/suppression_donnees.sql
+Dans la commande -
+DELETE FROM SUIVI_AMITIE
+Erreur à la ligne de commande: 3 Colonne: 13 Fichier @ file:/C:/Users/HansIV4/Documents/git repos/TP2_BD/TP2_BD/SQL_DEPART/suppression_donnees.sql
+Rapport d'erreur -
+Erreur SQL : ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> DELETE FROM STATUT_AMITIE;
+
+Erreur commençant à la ligne: 4 Fichier @ file:/C:/Users/HansIV4/Documents/git repos/TP2_BD/TP2_BD/SQL_DEPART/suppression_donnees.sql
+Dans la commande -
+DELETE FROM STATUT_AMITIE
+Erreur à la ligne de commande: 4 Colonne: 13 Fichier @ file:/C:/Users/HansIV4/Documents/git repos/TP2_BD/TP2_BD/SQL_DEPART/suppression_donnees.sql
+Rapport d'erreur -
+Erreur SQL : ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> DELETE FROM AMI;
+
+Erreur commençant à la ligne: 5 Fichier @ file:/C:/Users/HansIV4/Documents/git repos/TP2_BD/TP2_BD/SQL_DEPART/suppression_donnees.sql
+Dans la commande -
+DELETE FROM AMI
+Erreur à la ligne de commande: 5 Colonne: 13 Fichier @ file:/C:/Users/HansIV4/Documents/git repos/TP2_BD/TP2_BD/SQL_DEPART/suppression_donnees.sql
+Rapport d'erreur -
+Erreur SQL : ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> DELETE FROM SUCCES_REALISE;
+
+Erreur commençant à la ligne: 6 Fichier @ file:/C:/Users/HansIV4/Documents/git repos/TP2_BD/TP2_BD/SQL_DEPART/suppression_donnees.sql
+Dans la commande -
+DELETE FROM SUCCES_REALISE
+Erreur à la ligne de commande: 6 Colonne: 13 Fichier @ file:/C:/Users/HansIV4/Documents/git repos/TP2_BD/TP2_BD/SQL_DEPART/suppression_donnees.sql
+Rapport d'erreur -
+Erreur SQL : ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> DELETE FROM SUCCES_EN_COURS;
+
+Erreur commençant à la ligne: 7 Fichier @ file:/C:/Users/HansIV4/Documents/git repos/TP2_BD/TP2_BD/SQL_DEPART/suppression_donnees.sql
+Dans la commande -
+DELETE FROM SUCCES_EN_COURS
+Erreur à la ligne de commande: 7 Colonne: 13 Fichier @ file:/C:/Users/HansIV4/Documents/git repos/TP2_BD/TP2_BD/SQL_DEPART/suppression_donnees.sql
+Rapport d'erreur -
+Erreur SQL : ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> DELETE FROM SUCCES_CALCULE;
+
+Erreur commençant à la ligne: 8 Fichier @ file:/C:/Users/HansIV4/Documents/git repos/TP2_BD/TP2_BD/SQL_DEPART/suppression_donnees.sql
+Dans la commande -
+DELETE FROM SUCCES_CALCULE
+Erreur à la ligne de commande: 8 Colonne: 13 Fichier @ file:/C:/Users/HansIV4/Documents/git repos/TP2_BD/TP2_BD/SQL_DEPART/suppression_donnees.sql
+Rapport d'erreur -
+Erreur SQL : ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> DELETE FROM SUCCES;
+
+Erreur commençant à la ligne: 9 Fichier @ file:/C:/Users/HansIV4/Documents/git repos/TP2_BD/TP2_BD/SQL_DEPART/suppression_donnees.sql
+Dans la commande -
+DELETE FROM SUCCES
+Erreur à la ligne de commande: 9 Colonne: 13 Fichier @ file:/C:/Users/HansIV4/Documents/git repos/TP2_BD/TP2_BD/SQL_DEPART/suppression_donnees.sql
+Rapport d'erreur -
+Erreur SQL : ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> DELETE FROM CONTENU_POSSEDE;
+
+Erreur commençant à la ligne: 10 Fichier @ file:/C:/Users/HansIV4/Documents/git repos/TP2_BD/TP2_BD/SQL_DEPART/suppression_donnees.sql
+Dans la commande -
+DELETE FROM CONTENU_POSSEDE
+Erreur à la ligne de commande: 10 Colonne: 13 Fichier @ file:/C:/Users/HansIV4/Documents/git repos/TP2_BD/TP2_BD/SQL_DEPART/suppression_donnees.sql
+Rapport d'erreur -
+Erreur SQL : ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> DELETE FROM CONTENU;
+
+Erreur commençant à la ligne: 11 Fichier @ file:/C:/Users/HansIV4/Documents/git repos/TP2_BD/TP2_BD/SQL_DEPART/suppression_donnees.sql
+Dans la commande -
+DELETE FROM CONTENU
+Erreur à la ligne de commande: 11 Colonne: 13 Fichier @ file:/C:/Users/HansIV4/Documents/git repos/TP2_BD/TP2_BD/SQL_DEPART/suppression_donnees.sql
+Rapport d'erreur -
+Erreur SQL : ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> DELETE FROM PERIODE_FORFAIT_JOUEUR;
+
+Erreur commençant à la ligne: 12 Fichier @ file:/C:/Users/HansIV4/Documents/git repos/TP2_BD/TP2_BD/SQL_DEPART/suppression_donnees.sql
+Dans la commande -
+DELETE FROM PERIODE_FORFAIT_JOUEUR
+Erreur à la ligne de commande: 12 Colonne: 13 Fichier @ file:/C:/Users/HansIV4/Documents/git repos/TP2_BD/TP2_BD/SQL_DEPART/suppression_donnees.sql
+Rapport d'erreur -
+Erreur SQL : ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> DELETE FROM PERIODE;
+
+Erreur commençant à la ligne: 13 Fichier @ file:/C:/Users/HansIV4/Documents/git repos/TP2_BD/TP2_BD/SQL_DEPART/suppression_donnees.sql
+Dans la commande -
+DELETE FROM PERIODE
+Erreur à la ligne de commande: 13 Colonne: 13 Fichier @ file:/C:/Users/HansIV4/Documents/git repos/TP2_BD/TP2_BD/SQL_DEPART/suppression_donnees.sql
+Rapport d'erreur -
+Erreur SQL : ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> DELETE FROM FORFAIT;
+
+Erreur commençant à la ligne: 14 Fichier @ file:/C:/Users/HansIV4/Documents/git repos/TP2_BD/TP2_BD/SQL_DEPART/suppression_donnees.sql
+Dans la commande -
+DELETE FROM FORFAIT
+Erreur à la ligne de commande: 14 Colonne: 13 Fichier @ file:/C:/Users/HansIV4/Documents/git repos/TP2_BD/TP2_BD/SQL_DEPART/suppression_donnees.sql
+Rapport d'erreur -
+Erreur SQL : ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> DELETE FROM SUIVI_RESEAU;
+
+Erreur commençant à la ligne: 15 Fichier @ file:/C:/Users/HansIV4/Documents/git repos/TP2_BD/TP2_BD/SQL_DEPART/suppression_donnees.sql
+Dans la commande -
+DELETE FROM SUIVI_RESEAU
+Erreur à la ligne de commande: 15 Colonne: 13 Fichier @ file:/C:/Users/HansIV4/Documents/git repos/TP2_BD/TP2_BD/SQL_DEPART/suppression_donnees.sql
+Rapport d'erreur -
+Erreur SQL : ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> DELETE FROM ABONNEMENT_RESEAU;
+
+Erreur commençant à la ligne: 16 Fichier @ file:/C:/Users/HansIV4/Documents/git repos/TP2_BD/TP2_BD/SQL_DEPART/suppression_donnees.sql
+Dans la commande -
+DELETE FROM ABONNEMENT_RESEAU
+Erreur à la ligne de commande: 16 Colonne: 13 Fichier @ file:/C:/Users/HansIV4/Documents/git repos/TP2_BD/TP2_BD/SQL_DEPART/suppression_donnees.sql
+Rapport d'erreur -
+Erreur SQL : ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> DELETE FROM RESEAU;
+
+Erreur commençant à la ligne: 17 Fichier @ file:/C:/Users/HansIV4/Documents/git repos/TP2_BD/TP2_BD/SQL_DEPART/suppression_donnees.sql
+Dans la commande -
+DELETE FROM RESEAU
+Erreur à la ligne de commande: 17 Colonne: 13 Fichier @ file:/C:/Users/HansIV4/Documents/git repos/TP2_BD/TP2_BD/SQL_DEPART/suppression_donnees.sql
+Rapport d'erreur -
+Erreur SQL : ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> DELETE FROM SOUS_GENRE_JEU;
+
+Erreur commençant à la ligne: 18 Fichier @ file:/C:/Users/HansIV4/Documents/git repos/TP2_BD/TP2_BD/SQL_DEPART/suppression_donnees.sql
+Dans la commande -
+DELETE FROM SOUS_GENRE_JEU
+Erreur à la ligne de commande: 18 Colonne: 13 Fichier @ file:/C:/Users/HansIV4/Documents/git repos/TP2_BD/TP2_BD/SQL_DEPART/suppression_donnees.sql
+Rapport d'erreur -
+Erreur SQL : ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> DELETE FROM JOUEUR;
+
+Erreur commençant à la ligne: 19 Fichier @ file:/C:/Users/HansIV4/Documents/git repos/TP2_BD/TP2_BD/SQL_DEPART/suppression_donnees.sql
+Dans la commande -
+DELETE FROM JOUEUR
+Erreur à la ligne de commande: 19 Colonne: 13 Fichier @ file:/C:/Users/HansIV4/Documents/git repos/TP2_BD/TP2_BD/SQL_DEPART/suppression_donnees.sql
+Rapport d'erreur -
+Erreur SQL : ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> DELETE FROM JEU;
+
+Erreur commençant à la ligne: 20 Fichier @ file:/C:/Users/HansIV4/Documents/git repos/TP2_BD/TP2_BD/SQL_DEPART/suppression_donnees.sql
+Dans la commande -
+DELETE FROM JEU
+Erreur à la ligne de commande: 20 Colonne: 13 Fichier @ file:/C:/Users/HansIV4/Documents/git repos/TP2_BD/TP2_BD/SQL_DEPART/suppression_donnees.sql
+Rapport d'erreur -
+Erreur SQL : ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> DELETE FROM GENRE;
+
+Erreur commençant à la ligne: 21 Fichier @ file:/C:/Users/HansIV4/Documents/git repos/TP2_BD/TP2_BD/SQL_DEPART/suppression_donnees.sql
+Dans la commande -
+DELETE FROM GENRE
+Erreur à la ligne de commande: 21 Colonne: 13 Fichier @ file:/C:/Users/HansIV4/Documents/git repos/TP2_BD/TP2_BD/SQL_DEPART/suppression_donnees.sql
+Rapport d'erreur -
+Erreur SQL : ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> DELETE FROM ESRB;
+
+Erreur commençant à la ligne: 22 Fichier @ file:/C:/Users/HansIV4/Documents/git repos/TP2_BD/TP2_BD/SQL_DEPART/suppression_donnees.sql
+Dans la commande -
+DELETE FROM ESRB
+Erreur à la ligne de commande: 22 Colonne: 13 Fichier @ file:/C:/Users/HansIV4/Documents/git repos/TP2_BD/TP2_BD/SQL_DEPART/suppression_donnees.sql
+Rapport d'erreur -
+Erreur SQL : ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> @suppression_tables.sql
+SQL> REM SUPPRESSION DES TABLES
+SQL> 
+SQL> DROP TABLE JOUEUR;
+
+Erreur commençant à la ligne: 3 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_tables.sql
+Dans la commande -
+DROP TABLE JOUEUR
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> DROP TABLE ESRB;
+
+Erreur commençant à la ligne: 4 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_tables.sql
+Dans la commande -
+DROP TABLE ESRB
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> DROP TABLE GENRE;
+
+Erreur commençant à la ligne: 5 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_tables.sql
+Dans la commande -
+DROP TABLE GENRE
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> DROP TABLE SOUS_GENRE_JEU;
+
+Erreur commençant à la ligne: 6 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_tables.sql
+Dans la commande -
+DROP TABLE SOUS_GENRE_JEU
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> DROP TABLE JEU;
+
+Erreur commençant à la ligne: 7 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_tables.sql
+Dans la commande -
+DROP TABLE JEU
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> DROP TABLE CONTENU;
+
+Erreur commençant à la ligne: 8 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_tables.sql
+Dans la commande -
+DROP TABLE CONTENU
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> DROP TABLE CONTENU_POSSEDE;
+
+Erreur commençant à la ligne: 9 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_tables.sql
+Dans la commande -
+DROP TABLE CONTENU_POSSEDE
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> DROP TABLE SUCCES;
+
+Erreur commençant à la ligne: 10 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_tables.sql
+Dans la commande -
+DROP TABLE SUCCES
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> DROP TABLE SUCCES_CALCULE;
+
+Erreur commençant à la ligne: 11 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_tables.sql
+Dans la commande -
+DROP TABLE SUCCES_CALCULE
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> DROP TABLE SUCCES_REALISE;
+
+Erreur commençant à la ligne: 12 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_tables.sql
+Dans la commande -
+DROP TABLE SUCCES_REALISE
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> DROP TABLE SUCCES_EN_COURS;
+
+Erreur commençant à la ligne: 13 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_tables.sql
+Dans la commande -
+DROP TABLE SUCCES_EN_COURS
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> DROP TABLE FORFAIT;
+
+Erreur commençant à la ligne: 14 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_tables.sql
+Dans la commande -
+DROP TABLE FORFAIT
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> DROP TABLE PERIODE;
+
+Erreur commençant à la ligne: 15 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_tables.sql
+Dans la commande -
+DROP TABLE PERIODE
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> DROP TABLE PERIODE_FORFAIT_JOUEUR;
+
+Erreur commençant à la ligne: 16 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_tables.sql
+Dans la commande -
+DROP TABLE PERIODE_FORFAIT_JOUEUR
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> DROP TABLE RESEAU;
+
+Erreur commençant à la ligne: 17 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_tables.sql
+Dans la commande -
+DROP TABLE RESEAU
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> DROP TABLE ABONNEMENT_RESEAU;
+
+Erreur commençant à la ligne: 18 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_tables.sql
+Dans la commande -
+DROP TABLE ABONNEMENT_RESEAU
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> DROP TABLE SUIVI_RESEAU;
+
+Erreur commençant à la ligne: 19 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_tables.sql
+Dans la commande -
+DROP TABLE SUIVI_RESEAU
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> DROP TABLE AMI;
+
+Erreur commençant à la ligne: 20 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_tables.sql
+Dans la commande -
+DROP TABLE AMI
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> DROP TABLE STATUT_AMITIE;
+
+Erreur commençant à la ligne: 21 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_tables.sql
+Dans la commande -
+DROP TABLE STATUT_AMITIE
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> DROP TABLE SUIVI_AMITIE;
+
+Erreur commençant à la ligne: 22 Fichier @ C:\Users\HansIV4\Documents\git repos\TP2_BD\TP2_BD\SQL_DEPART\suppression_tables.sql
+Dans la commande -
+DROP TABLE SUIVI_AMITIE
+Rapport d'erreur -
+ORA-00942: Table ou vue inexistante
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+SQL> 
+SQL> spool off
