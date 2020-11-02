@@ -735,12 +735,179 @@ SQL> @scripts/creation_declencheurs.sql
 SQL> REM CREATION DES TRIGGERS
 SQL> 
 SQL> @declencheurs/sequences.sql
+SQL> CREATE SEQUENCE CONTENU_SEQ
+  2      MINVALUE 1
+  3      START WITH 1
+  4      INCREMENT BY 1;
 
-Erreur commençant à la ligne: 3 Fichier @ C:\Users\utilisateur\Downloads\travail2\SQL_DEPART\scripts\creation_declencheurs.sql
+Erreur commençant à la ligne: 1 Fichier @ C:\Users\utilisateur\Downloads\travail2\SQL_DEPART\scripts\declencheurs\sequences.sql
 Dans la commande -
-@declencheurs/sequences.sql
+CREATE SEQUENCE CONTENU_SEQ
+    MINVALUE 1
+    START WITH 1
+    INCREMENT BY 1
 Rapport d'erreur -
-SP2-0310 : impossible d'ouvrir le fichier : "declencheurs/sequences.sql"
+ORA-00955: ce nom d'objet existe déjà
+00955. 00000 -  "name is already used by an existing object"
+*Cause:    
+*Action:
+SQL> CREATE TRIGGER CONTENU_ID_TRG
+  2      BEFORE INSERT
+  3      ON CONTENU
+  4      FOR EACH ROW
+  5  BEGIN
+  6      SELECT CONTENU_SEQ.NEXTVAL
+  7          INTO :NEW.IDCONTENU
+  8          FROM DUAL;
+  9  END;
+ 10  /
+
+Elément Trigger CONTENU_ID_TRG compilé
+
+SQL> 
+SQL> CREATE SEQUENCE JEU_SEQ;
+
+Erreur commençant à la ligne: 16 Fichier @ C:\Users\utilisateur\Downloads\travail2\SQL_DEPART\scripts\declencheurs\sequences.sql
+Dans la commande -
+CREATE SEQUENCE JEU_SEQ
+Rapport d'erreur -
+ORA-00955: ce nom d'objet existe déjà
+00955. 00000 -  "name is already used by an existing object"
+*Cause:    
+*Action:
+SQL> CREATE TRIGGER JEU_ID_TRG
+  2      BEFORE INSERT
+  3      ON JEU
+  4      FOR EACH ROW
+  5  BEGIN
+  6      SELECT JEU_SEQ.NEXTVAL
+  7          INTO :NEW.IDJEU
+  8          FROM DUAL;
+  9  END;
+ 10  /
+
+Elément Trigger JEU_ID_TRG compilé
+
+SQL> 
+SQL> CREATE SEQUENCE JOUEUR_SEQ;
+
+Erreur commençant à la ligne: 28 Fichier @ C:\Users\utilisateur\Downloads\travail2\SQL_DEPART\scripts\declencheurs\sequences.sql
+Dans la commande -
+CREATE SEQUENCE JOUEUR_SEQ
+Rapport d'erreur -
+ORA-00955: ce nom d'objet existe déjà
+00955. 00000 -  "name is already used by an existing object"
+*Cause:    
+*Action:
+SQL> CREATE TRIGGER JOUEUR_ID_TRG
+  2      BEFORE INSERT
+  3      ON JOUEUR
+  4      FOR EACH ROW
+  5  BEGIN
+  6      SELECT JOUEUR_SEQ.NEXTVAL
+  7          INTO :NEW.NOJOUEUR
+  8          FROM DUAL;
+  9  END;
+ 10  /
+
+Elément Trigger JOUEUR_ID_TRG compilé
+
+SQL> 
+SQL> CREATE SEQUENCE PERIODE_SEQ;
+
+Erreur commençant à la ligne: 40 Fichier @ C:\Users\utilisateur\Downloads\travail2\SQL_DEPART\scripts\declencheurs\sequences.sql
+Dans la commande -
+CREATE SEQUENCE PERIODE_SEQ
+Rapport d'erreur -
+ORA-00955: ce nom d'objet existe déjà
+00955. 00000 -  "name is already used by an existing object"
+*Cause:    
+*Action:
+SQL> CREATE TRIGGER PERIODE_ID_TRG
+  2      BEFORE INSERT
+  3      ON PERIODE
+  4      FOR EACH ROW
+  5  BEGIN
+  6      SELECT PERIODE_SEQ.NEXTVAL
+  7          INTO :NEW.IDPERIODE
+  8          FROM DUAL;
+  9  END;
+ 10  /
+
+Elément Trigger PERIODE_ID_TRG compilé
+
+SQL> 
+SQL> CREATE SEQUENCE SUCCES_SEQ;
+
+Erreur commençant à la ligne: 52 Fichier @ C:\Users\utilisateur\Downloads\travail2\SQL_DEPART\scripts\declencheurs\sequences.sql
+Dans la commande -
+CREATE SEQUENCE SUCCES_SEQ
+Rapport d'erreur -
+ORA-00955: ce nom d'objet existe déjà
+00955. 00000 -  "name is already used by an existing object"
+*Cause:    
+*Action:
+SQL> CREATE TRIGGER SUCCES_ID_TRG
+  2      BEFORE INSERT
+  3      ON SUCCES
+  4      FOR EACH ROW
+  5  BEGIN
+  6      SELECT SUCCES_SEQ.NEXTVAL
+  7          INTO :NEW.IDSUCCES
+  8          FROM DUAL;
+  9  END;
+ 10  /
+
+Elément Trigger SUCCES_ID_TRG compilé
+
+SQL> 
+SQL> CREATE SEQUENCE SUIVI_AMITIE_SEQ;
+
+Erreur commençant à la ligne: 64 Fichier @ C:\Users\utilisateur\Downloads\travail2\SQL_DEPART\scripts\declencheurs\sequences.sql
+Dans la commande -
+CREATE SEQUENCE SUIVI_AMITIE_SEQ
+Rapport d'erreur -
+ORA-00955: ce nom d'objet existe déjà
+00955. 00000 -  "name is already used by an existing object"
+*Cause:    
+*Action:
+SQL> CREATE TRIGGER SUIVI_AMITIE_ID_TRG
+  2      BEFORE INSERT
+  3      ON SUIVI_AMITIE
+  4      FOR EACH ROW
+  5  BEGIN
+  6      SELECT SUIVI_AMITIE_SEQ.NEXTVAL
+  7          INTO :NEW.IDSUIVI
+  8          FROM DUAL;
+  9  END;
+ 10  /
+
+Elément Trigger SUIVI_AMITIE_ID_TRG compilé
+
+SQL> 
+SQL> CREATE SEQUENCE SUIVI_RESEAU_SEQ;
+
+Erreur commençant à la ligne: 76 Fichier @ C:\Users\utilisateur\Downloads\travail2\SQL_DEPART\scripts\declencheurs\sequences.sql
+Dans la commande -
+CREATE SEQUENCE SUIVI_RESEAU_SEQ
+Rapport d'erreur -
+ORA-00955: ce nom d'objet existe déjà
+00955. 00000 -  "name is already used by an existing object"
+*Cause:    
+*Action:
+SQL> CREATE TRIGGER SUIVI_RESEAU_ID_TRG
+  2      BEFORE INSERT
+  3      ON SUIVI_RESEAU
+  4      FOR EACH ROW
+  5  BEGIN
+  6      SELECT SUIVI_RESEAU_SEQ.NEXTVAL
+  7          INTO :NEW.IDSUIVI
+  8          FROM DUAL;
+  9  END;
+ 10  /
+
+Elément Trigger SUIVI_RESEAU_ID_TRG compilé
+
 SQL> 
 SQL> @declencheurs/nouveauSuccesEnCours.sql 
 SQL> CREATE OR REPLACE TRIGGER NouveauSuccesEnCours_TRG
@@ -917,36 +1084,222 @@ Dans la commande -
 Rapport d'erreur -
 SP2-0310 : impossible d'ouvrir le fichier : "declencheurs/suiviAbonnementReseau.sql"
 SQL> @declencheurs/suiviAmi.sql
+SQL> CREATE OR REPLACE TRIGGER Suivi_Ami_TRG
+  2  AFTER UPDATE OR INSERT OR DELETE
+  3  ON AMI
+  4  FOR EACH ROW
+  5  
+  6  DECLARE 
+  7      currentMoment timestamp;
+  8  
+  9  BEGIN
+ 10      SELECT SYSTIMESTAMP into currentMoment FROM DUAL;
+ 11  
+ 12      if INSERTING or UPDATING
+ 13      then
+ 14          insert into SUIVI_AMITIE (DATESUIVI, CODESTATUT, NOJOUEURINVITANT, NOJOUEURINVITE)
+ 15          values (currentMoment, :NEW.CODESTATUT, :NEW.NOJOUEURINVITANT, :NEW.NOJOUEURINVITE);
+ 16  
+ 17      elsif DELETING
+ 18      then
+ 19          insert into SUIVI_AMITIE (DATESUIVI, CODESTATUT, NOJOUEURINVITANT, NOJOUEURINVITE)
+ 20          values (currentMoment, :OLD.CODESTATUT, :OLD.NOJOUEURINVITANT, :OLD.NOJOUEURINVITE);
+ 21  
+ 22      end if;
+ 23  
+ 24  END;
+ 25  /
 
-Erreur commençant à la ligne: 9 Fichier @ C:\Users\utilisateur\Downloads\travail2\SQL_DEPART\scripts\creation_declencheurs.sql
+Erreur commençant à la ligne: 1 Fichier @ C:\Users\utilisateur\Downloads\travail2\SQL_DEPART\scripts\declencheurs\suiviAmi.sql
 Dans la commande -
-@declencheurs/suiviAmi.sql
+CREATE OR REPLACE TRIGGER Suivi_Ami_TRG
+AFTER UPDATE OR INSERT OR DELETE
+ON AMI
+FOR EACH ROW
+
+DECLARE 
+    currentMoment timestamp;
+
+BEGIN
+    SELECT SYSTIMESTAMP into currentMoment FROM DUAL;
+
+    if INSERTING or UPDATING
+    then
+        insert into SUIVI_AMITIE (DATESUIVI, CODESTATUT, NOJOUEURINVITANT, NOJOUEURINVITE)
+        values (currentMoment, :NEW.CODESTATUT, :NEW.NOJOUEURINVITANT, :NEW.NOJOUEURINVITE);
+
+    elsif DELETING
+    then
+        insert into SUIVI_AMITIE (DATESUIVI, CODESTATUT, NOJOUEURINVITANT, NOJOUEURINVITE)
+        values (currentMoment, :OLD.CODESTATUT, :OLD.NOJOUEURINVITANT, :OLD.NOJOUEURINVITE);
+
+    end if;
+
+END;
 Rapport d'erreur -
-SP2-0310 : impossible d'ouvrir le fichier : "declencheurs/suiviAmi.sql"
+Connexion interrompue
 SQL> @scripts/creation_procedures.sql
 SQL> REM CREATION DES PROCEDURES
 SQL> 
 SQL> @procedures/ajoutForfait.sql
+SQL> CREATE OR REPLACE PROCEDURE ajoutForfait(
+  2      Code IN FORFAIT.CODE%TYPE,
+  3      Nom IN FORFAIT.NOM%TYPE,
+  4      Description IN FORFAIT.DESCRIPTION%TYPE,
+  5      Prix IN PERIODE.PRIX%TYPE
+  6      )
+  7  IS
+  8      NomForfait FORFAIT.CODE%TYPE;
+  9      Today DATE;
+ 10  BEGIN
+ 11      SELECT SYSDATE INTO Today FROM DUAL;
+ 12      NomForfait := Nom;
+ 13  
+ 14      IF (NomForfait IS NULL)
+ 15      THEN
+ 16          NomForfait := 'DEFAULT';
+ 17      END IF;
+ 18  
+ 19      INSERT INTO FORFAIT VALUES (Code, Nom, Description);
+ 20      INSERT INTO PERIODE (DATEDEBUT, DATEFIN, PRIX, CODEFORFAIT) VALUES (Today, add_months(Today, 12), Prix, Code);
+ 21  
+ 22  END;
+ 23  /
 
-Erreur commençant à la ligne: 3 Fichier @ C:\Users\utilisateur\Downloads\travail2\SQL_DEPART\scripts\creation_procedures.sql
+Erreur commençant à la ligne: 1 Fichier @ C:\Users\utilisateur\Downloads\travail2\SQL_DEPART\scripts\procedures\ajoutForfait.sql
 Dans la commande -
-@procedures/ajoutForfait.sql
+CREATE OR REPLACE PROCEDURE ajoutForfait(
+    Code IN FORFAIT.CODE%TYPE,
+    Nom IN FORFAIT.NOM%TYPE,
+    Description IN FORFAIT.DESCRIPTION%TYPE,
+    Prix IN PERIODE.PRIX%TYPE
+    )
+IS
+    NomForfait FORFAIT.CODE%TYPE;
+    Today DATE;
+BEGIN
+    SELECT SYSDATE INTO Today FROM DUAL;
+    NomForfait := Nom;
+
+    IF (NomForfait IS NULL)
+    THEN
+        NomForfait := 'DEFAULT';
+    END IF;
+
+    INSERT INTO FORFAIT VALUES (Code, Nom, Description);
+    INSERT INTO PERIODE (DATEDEBUT, DATEFIN, PRIX, CODEFORFAIT) VALUES (Today, add_months(Today, 12), Prix, Code);
+
+END;
 Rapport d'erreur -
-SP2-0310 : impossible d'ouvrir le fichier : "procedures/ajoutForfait.sql"
+Connexion interrompue
 SQL> @procedures/prolongationForfait.sql
+SQL> CREATE OR REPLACE PROCEDURE ajoutForfait(
+  2      CodeForfait IN FORFAIT.CODE%TYPE,
+  3      PlayerCount OUT NUMBER
+  4      )
+  5  IS
+  6      
+  7      
+  8      rec_PERIODE_FORFAIT_JOUEUR PERIODE_FORFAIT_JOUEUR%ROWTYPE;
+  9      Today DATE;
+ 10  
+ 11      CURSOR cur_PERIODE_FORFAIT_JOUEUR IS
+ 12      SELECT * FROM PERIODE_FORFAIT_JOUEUR WHERE
+ 13      IDPERIODE IN (SELECT PERIODE.IDPERIODE FROM PERIODE WHERE CODEFORFAIT = CodeForfait);
+ 14  BEGIN
+ 15      SELECT SYSDATE INTO Today FROM DUAL;
+ 16  
+ 17      FETCH cur_PERIODE_FORFAIT_JOUEUR INTO rec_PERIODE_FORFAIT_JOUEUR;
+ 18      WHILE cur_PERIODE_FORFAIT_JOUEUR%FOUND LOOP
+ 19          IF (rec_PERIODE_FORFAIT_JOUEUR.DATEACHAT < add_months(Today, 12)) 
+ 20          THEN
+ 21              UPDATE PERIODE_FORFAIT_JOUEUR SET DATEACHAT = add_months(DATEACHAT, 2)
+ 22              WHERE IDPERIODE = rec_PERIODE_FORFAIT_JOUEUR.IDPERIODE;
+ 23              PlayerCount := PlayerCount + 1;
+ 24          END IF;
+ 25          FETCH cur_PERIODE_FORFAIT_JOUEUR INTO rec_PERIODE_FORFAIT_JOUEUR;
+ 26      END LOOP;
+ 27  
+ 28  
+ 29      CLOSE cur_PERIODE_FORFAIT_JOUEUR;
+ 30  
+ 31  END;
+ 32  /
 
-Erreur commençant à la ligne: 4 Fichier @ C:\Users\utilisateur\Downloads\travail2\SQL_DEPART\scripts\creation_procedures.sql
+Erreur commençant à la ligne: 1 Fichier @ C:\Users\utilisateur\Downloads\travail2\SQL_DEPART\scripts\procedures\prolongationForfait.sql
 Dans la commande -
-@procedures/prolongationForfait.sql
+CREATE OR REPLACE PROCEDURE ajoutForfait(
+    CodeForfait IN FORFAIT.CODE%TYPE,
+    PlayerCount OUT NUMBER
+    )
+IS
+    
+    
+    rec_PERIODE_FORFAIT_JOUEUR PERIODE_FORFAIT_JOUEUR%ROWTYPE;
+    Today DATE;
+
+    CURSOR cur_PERIODE_FORFAIT_JOUEUR IS
+    SELECT * FROM PERIODE_FORFAIT_JOUEUR WHERE
+    IDPERIODE IN (SELECT PERIODE.IDPERIODE FROM PERIODE WHERE CODEFORFAIT = CodeForfait);
+BEGIN
+    SELECT SYSDATE INTO Today FROM DUAL;
+
+    FETCH cur_PERIODE_FORFAIT_JOUEUR INTO rec_PERIODE_FORFAIT_JOUEUR;
+    WHILE cur_PERIODE_FORFAIT_JOUEUR%FOUND LOOP
+        IF (rec_PERIODE_FORFAIT_JOUEUR.DATEACHAT < add_months(Today, 12)) 
+        THEN
+            UPDATE PERIODE_FORFAIT_JOUEUR SET DATEACHAT = add_months(DATEACHAT, 2)
+            WHERE IDPERIODE = rec_PERIODE_FORFAIT_JOUEUR.IDPERIODE;
+            PlayerCount := PlayerCount + 1;
+        END IF;
+        FETCH cur_PERIODE_FORFAIT_JOUEUR INTO rec_PERIODE_FORFAIT_JOUEUR;
+    END LOOP;
+
+
+    CLOSE cur_PERIODE_FORFAIT_JOUEUR;
+
+END;
 Rapport d'erreur -
-SP2-0310 : impossible d'ouvrir le fichier : "procedures/prolongationForfait.sql"
+Connexion interrompue
 SQL> @procedures/ajusterPromotion.sql
+SQL> CREATE OR REPLACE PROCEDURE ajusterPromotion(
+  2      CodeForfait OUT FORFAIT.CODE%TYPE,
+  3      NewPrice OUT PERIODE.PRIX%TYPE
+  4      )
+  5  IS
+  6      CodeReseauPlusPopulaire ABONNEMENT_RESEAU.CODERESEAU%TYPE;
+  7  BEGIN
+  8      NomForfait := Nom;
+  9  
+ 10      SELECT * INTO CodeReseauPlusPopulaire FROM (SELECT CODERESEAU FROM ABONNEMENT_RESEAU GROUP BY CODERESEAU ORDER BY COUNT(CODERESEAU) DESC) WHERE rownum = 1;
+ 11  
+ 12  
+ 13  
+ 14  
+ 15  
+ 16  END;
+ 17  /
 
-Erreur commençant à la ligne: 5 Fichier @ C:\Users\utilisateur\Downloads\travail2\SQL_DEPART\scripts\creation_procedures.sql
+Erreur commençant à la ligne: 1 Fichier @ C:\Users\utilisateur\Downloads\travail2\SQL_DEPART\scripts\procedures\ajusterPromotion.sql
 Dans la commande -
-@procedures/ajusterPromotion.sql
+CREATE OR REPLACE PROCEDURE ajusterPromotion(
+    CodeForfait OUT FORFAIT.CODE%TYPE,
+    NewPrice OUT PERIODE.PRIX%TYPE
+    )
+IS
+    CodeReseauPlusPopulaire ABONNEMENT_RESEAU.CODERESEAU%TYPE;
+BEGIN
+    NomForfait := Nom;
+
+    SELECT * INTO CodeReseauPlusPopulaire FROM (SELECT CODERESEAU FROM ABONNEMENT_RESEAU GROUP BY CODERESEAU ORDER BY COUNT(CODERESEAU) DESC) WHERE rownum = 1;
+
+
+
+
+
+END;
 Rapport d'erreur -
-SP2-0310 : impossible d'ouvrir le fichier : "procedures/ajusterPromotion.sql"
+Connexion interrompue
 SQL> @procedures/suppressionJeu.sql
 
 Erreur commençant à la ligne: 6 Fichier @ C:\Users\utilisateur\Downloads\travail2\SQL_DEPART\scripts\creation_procedures.sql
@@ -1002,926 +1355,3 @@ Dans la commande -
 @vues/suivi.sql
 Rapport d'erreur -
 SP2-0310 : impossible d'ouvrir le fichier : "vues/suivi.sql"
-SQL> @creation_donnees.sql
-SQL> REM CREATION DES DONNÉES
-SQL> 
-SQL> INSERT INTO JOUEUR (Courriel, Surnom, Miniature, Nom, Prenom)
-  2  	VALUES ('bob@hotmail.com', 'BOB LE JOUEUR', NULL, 'Robert', 'Paquette');
-
-Erreur commençant à la ligne: 3 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO JOUEUR (Courriel, Surnom, Miniature, Nom, Prenom)
-	VALUES ('bob@hotmail.com', 'BOB LE JOUEUR', NULL, 'Robert', 'Paquette')
-Erreur à la ligne de commande: 3 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO JOUEUR (Courriel, Surnom, Miniature, Nom, Prenom, Actif)
-  2  	VALUES ('fred@outlook.com', 'Fred Y', NULL, NULL, NULL, 0);
-
-Erreur commençant à la ligne: 5 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO JOUEUR (Courriel, Surnom, Miniature, Nom, Prenom, Actif)
-	VALUES ('fred@outlook.com', 'Fred Y', NULL, NULL, NULL, 0)
-Erreur à la ligne de commande: 5 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO JOUEUR (Courriel, Surnom, Miniature, Nom, Prenom, Actif)
-  2  	VALUES ('roger@gmail.com', 'Roger la menace', NULL, 'Roger', 'Tremblay', 1);
-
-Erreur commençant à la ligne: 7 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO JOUEUR (Courriel, Surnom, Miniature, Nom, Prenom, Actif)
-	VALUES ('roger@gmail.com', 'Roger la menace', NULL, 'Roger', 'Tremblay', 1)
-Erreur à la ligne de commande: 7 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO JOUEUR (Courriel, Surnom, Miniature, Nom, Prenom, Actif)
-  2  	VALUES ('steve@hotmail.com', 'Steve le pirate', NULL, 'S', 'P', 1);
-
-Erreur commençant à la ligne: 9 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO JOUEUR (Courriel, Surnom, Miniature, Nom, Prenom, Actif)
-	VALUES ('steve@hotmail.com', 'Steve le pirate', NULL, 'S', 'P', 1)
-Erreur à la ligne de commande: 9 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO JOUEUR (Courriel, Surnom, Miniature, Nom, Prenom, Actif)
-  2  	VALUES ('sylvie@outlook.com', 'SILL VI', NULL, NULL, NULL, 1);
-
-Erreur commençant à la ligne: 11 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO JOUEUR (Courriel, Surnom, Miniature, Nom, Prenom, Actif)
-	VALUES ('sylvie@outlook.com', 'SILL VI', NULL, NULL, NULL, 1)
-Erreur à la ligne de commande: 11 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO JOUEUR (Courriel, Surnom, Miniature, Nom, Prenom, Actif)
-  2  	VALUES ('barbie15@gmail.com', 'Tank Girl', NULL, 'Tank', NULL, 0);
-
-Erreur commençant à la ligne: 13 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO JOUEUR (Courriel, Surnom, Miniature, Nom, Prenom, Actif)
-	VALUES ('barbie15@gmail.com', 'Tank Girl', NULL, 'Tank', NULL, 0)
-Erreur à la ligne de commande: 13 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> 
-SQL> INSERT INTO ESRB (Code, Description)
-  2  	VALUES ('E', 'Enfants et adultes');
-
-Erreur commençant à la ligne: 16 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO ESRB (Code, Description)
-	VALUES ('E', 'Enfants et adultes')
-Erreur à la ligne de commande: 16 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO ESRB (Code, Description)
-  2  	VALUES ('T', 'Adolescents');
-
-Erreur commençant à la ligne: 18 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO ESRB (Code, Description)
-	VALUES ('T', 'Adolescents')
-Erreur à la ligne de commande: 18 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO ESRB (Code, Description)
-  2  	VALUES ('M', 'Jeunes adultes');
-
-Erreur commençant à la ligne: 20 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO ESRB (Code, Description)
-	VALUES ('M', 'Jeunes adultes')
-Erreur à la ligne de commande: 20 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO ESRB (Code, Description)
-  2  	VALUES ('A', 'Adultes');
-
-Erreur commençant à la ligne: 22 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO ESRB (Code, Description)
-	VALUES ('A', 'Adultes')
-Erreur à la ligne de commande: 22 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO ESRB (Code, Description)
-  2  	VALUES ('R', 'En attente de classement');
-
-Erreur commençant à la ligne: 24 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO ESRB (Code, Description)
-	VALUES ('R', 'En attente de classement')
-Erreur à la ligne de commande: 24 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> 
-SQL> INSERT INTO GENRE (Code, Description, CodeGenreParent)
-  2  	VALUES ('ACT', 'Action', 'ACT');
-
-Erreur commençant à la ligne: 27 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO GENRE (Code, Description, CodeGenreParent)
-	VALUES ('ACT', 'Action', 'ACT')
-Erreur à la ligne de commande: 27 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO GENRE (Code, Description, CodeGenreParent)
-  2  	VALUES ('HOR', 'Horreur', 'HOR');
-
-Erreur commençant à la ligne: 29 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO GENRE (Code, Description, CodeGenreParent)
-	VALUES ('HOR', 'Horreur', 'HOR')
-Erreur à la ligne de commande: 29 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO GENRE (Code, Description, CodeGenreParent)
-  2  	VALUES ('SPT', 'Sport', 'SPT');
-
-Erreur commençant à la ligne: 31 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO GENRE (Code, Description, CodeGenreParent)
-	VALUES ('SPT', 'Sport', 'SPT')
-Erreur à la ligne de commande: 31 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO GENRE (Code, Description, CodeGenreParent)
-  2  	VALUES ('AVT', 'Aventure', 'ACT');
-
-Erreur commençant à la ligne: 33 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO GENRE (Code, Description, CodeGenreParent)
-	VALUES ('AVT', 'Aventure', 'ACT')
-Erreur à la ligne de commande: 33 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO GENRE (Code, Description, CodeGenreParent)
-  2  	VALUES ('HCK', 'Hack and Slash', 'ACT');
-
-Erreur commençant à la ligne: 35 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO GENRE (Code, Description, CodeGenreParent)
-	VALUES ('HCK', 'Hack and Slash', 'ACT')
-Erreur à la ligne de commande: 35 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO GENRE (Code, Description, CodeGenreParent)
-  2  	VALUES ('SUR', 'Survie', 'HOR');
-
-Erreur commençant à la ligne: 37 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO GENRE (Code, Description, CodeGenreParent)
-	VALUES ('SUR', 'Survie', 'HOR')
-Erreur à la ligne de commande: 37 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO GENRE (Code, Description, CodeGenreParent)
-  2  	VALUES ('COU', 'Course', 'SPT');
-
-Erreur commençant à la ligne: 39 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO GENRE (Code, Description, CodeGenreParent)
-	VALUES ('COU', 'Course', 'SPT')
-Erreur à la ligne de commande: 39 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> 
-SQL> INSERT INTO JEU (Nom, Description, CodeESRB, CodeGenre)
-  2  	VALUES ('TOMB RAIDER', 'Les aventures de Lara Croft', 'T', 'ACT');
-
-Erreur commençant à la ligne: 42 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO JEU (Nom, Description, CodeESRB, CodeGenre)
-	VALUES ('TOMB RAIDER', 'Les aventures de Lara Croft', 'T', 'ACT')
-Erreur à la ligne de commande: 42 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO JEU (Nom, Description, CodeESRB, CodeGenre)
-  2  	VALUES ('Dying Light', 'Survivre dans un monde infesté de zombie. Bonne nuit!', 'M', 'HOR');
-
-Erreur commençant à la ligne: 44 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO JEU (Nom, Description, CodeESRB, CodeGenre)
-	VALUES ('Dying Light', 'Survivre dans un monde infesté de zombie. Bonne nuit!', 'M', 'HOR')
-Erreur à la ligne de commande: 44 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO JEU (Nom, Description, CodeESRB, CodeGenre)
-  2  	VALUES ('CANDY CRUSH', 'Le super jeu', 'T', 'HOR');
-
-Erreur commençant à la ligne: 46 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO JEU (Nom, Description, CodeESRB, CodeGenre)
-	VALUES ('CANDY CRUSH', 'Le super jeu', 'T', 'HOR')
-Erreur à la ligne de commande: 46 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> 
-SQL> INSERT INTO SOUS_GENRE_JEU (CodeSousGenre, IdJeu)
-  2  	VALUES ('AVT', 1);
-
-Erreur commençant à la ligne: 49 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO SOUS_GENRE_JEU (CodeSousGenre, IdJeu)
-	VALUES ('AVT', 1)
-Erreur à la ligne de commande: 49 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO SOUS_GENRE_JEU (CodeSousGenre, IdJeu)
-  2  	VALUES ('SUR', 2);
-
-Erreur commençant à la ligne: 51 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO SOUS_GENRE_JEU (CodeSousGenre, IdJeu)
-	VALUES ('SUR', 2)
-Erreur à la ligne de commande: 51 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> 
-SQL> INSERT INTO CONTENU (Nom, Description, DateSortie, TypeContenu, IdJeu)
-  2  	VALUES ('Les quêtes principales', 'Les aventures de Lara Croft en Amazonie', to_date('2018-02-03'), 'J', 1);
-
-Erreur commençant à la ligne: 54 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO CONTENU (Nom, Description, DateSortie, TypeContenu, IdJeu)
-	VALUES ('Les quêtes principales', 'Les aventures de Lara Croft en Amazonie', to_date('2018-02-03'), 'J', 1)
-Erreur à la ligne de commande: 54 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO CONTENU (Nom, Description, DateSortie, TypeContenu, IdJeu)
-  2  	VALUES ('La quête secondaire du dragon', 'Les aventures de Lara Croft en Chine', to_date('2018-06-23'), 'D', 1);
-
-Erreur commençant à la ligne: 56 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO CONTENU (Nom, Description, DateSortie, TypeContenu, IdJeu)
-	VALUES ('La quête secondaire du dragon', 'Les aventures de Lara Croft en Chine', to_date('2018-06-23'), 'D', 1)
-Erreur à la ligne de commande: 56 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO CONTENU (Nom, Description, DateSortie, TypeContenu, IdJeu)
-  2  	VALUES ('La quête secondaire de l''aigle', 'Les aventures de Lara Croft dans les montagnes', to_date('2018-11-11'),'D', 1);
-
-Erreur commençant à la ligne: 58 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO CONTENU (Nom, Description, DateSortie, TypeContenu, IdJeu)
-	VALUES ('La quête secondaire de l''aigle', 'Les aventures de Lara Croft dans les montagnes', to_date('2018-11-11'),'D', 1)
-Erreur à la ligne de commande: 58 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO CONTENU (Nom, Description, DateSortie, TypeContenu, IdJeu)
-  2  	VALUES ('Ensemble d''exploration', 'Équipements supplémentaires pour l''aventure', to_date('2018-12-01'), 'O', 1);
-
-Erreur commençant à la ligne: 60 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO CONTENU (Nom, Description, DateSortie, TypeContenu, IdJeu)
-	VALUES ('Ensemble d''exploration', 'Équipements supplémentaires pour l''aventure', to_date('2018-12-01'), 'O', 1)
-Erreur à la ligne de commande: 60 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO CONTENU (Nom, Description, DateSortie, TypeContenu, IdJeu)
-  2  	VALUES ('Chicago', 'La ville infestée de Chicago', to_date('2018-09-09'), 'J', 2);
-
-Erreur commençant à la ligne: 62 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO CONTENU (Nom, Description, DateSortie, TypeContenu, IdJeu)
-	VALUES ('Chicago', 'La ville infestée de Chicago', to_date('2018-09-09'), 'J', 2)
-Erreur à la ligne de commande: 62 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO CONTENU (Nom, Description, DateSortie, TypeContenu, IdJeu)
-  2  	VALUES ('Niveau1', 'Les 10 premiers niveaux', to_date('2019-01-24'), 'J', 3);
-
-Erreur commençant à la ligne: 64 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO CONTENU (Nom, Description, DateSortie, TypeContenu, IdJeu)
-	VALUES ('Niveau1', 'Les 10 premiers niveaux', to_date('2019-01-24'), 'J', 3)
-Erreur à la ligne de commande: 64 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> 
-SQL> INSERT INTO CONTENU_POSSEDE (IdContenu, NoJoueur)
-  2  	VALUES (1, 1);
-
-Erreur commençant à la ligne: 67 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO CONTENU_POSSEDE (IdContenu, NoJoueur)
-	VALUES (1, 1)
-Erreur à la ligne de commande: 67 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO CONTENU_POSSEDE (IdContenu, NoJoueur)
-  2  	VALUES (2, 1);
-
-Erreur commençant à la ligne: 69 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO CONTENU_POSSEDE (IdContenu, NoJoueur)
-	VALUES (2, 1)
-Erreur à la ligne de commande: 69 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO CONTENU_POSSEDE (IdContenu, NoJoueur)
-  2  	VALUES (3, 1);
-
-Erreur commençant à la ligne: 71 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO CONTENU_POSSEDE (IdContenu, NoJoueur)
-	VALUES (3, 1)
-Erreur à la ligne de commande: 71 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO CONTENU_POSSEDE (IdContenu, NoJoueur)
-  2  	VALUES (4, 1);
-
-Erreur commençant à la ligne: 73 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO CONTENU_POSSEDE (IdContenu, NoJoueur)
-	VALUES (4, 1)
-Erreur à la ligne de commande: 73 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO CONTENU_POSSEDE (IdContenu, NoJoueur)
-  2  	VALUES (1, 2);
-
-Erreur commençant à la ligne: 75 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO CONTENU_POSSEDE (IdContenu, NoJoueur)
-	VALUES (1, 2)
-Erreur à la ligne de commande: 75 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO CONTENU_POSSEDE (IdContenu, NoJoueur)
-  2  	VALUES (5, 2);
-
-Erreur commençant à la ligne: 77 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO CONTENU_POSSEDE (IdContenu, NoJoueur)
-	VALUES (5, 2)
-Erreur à la ligne de commande: 77 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO CONTENU_POSSEDE (IdContenu, NoJoueur)
-  2  	VALUES (1, 3);
-
-Erreur commençant à la ligne: 79 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO CONTENU_POSSEDE (IdContenu, NoJoueur)
-	VALUES (1, 3)
-Erreur à la ligne de commande: 79 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO CONTENU_POSSEDE (IdContenu, NoJoueur)
-  2  	VALUES (2, 3);
-
-Erreur commençant à la ligne: 81 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO CONTENU_POSSEDE (IdContenu, NoJoueur)
-	VALUES (2, 3)
-Erreur à la ligne de commande: 81 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO CONTENU_POSSEDE (IdContenu, NoJoueur)
-  2  	VALUES (3, 3);
-
-Erreur commençant à la ligne: 83 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO CONTENU_POSSEDE (IdContenu, NoJoueur)
-	VALUES (3, 3)
-Erreur à la ligne de commande: 83 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO CONTENU_POSSEDE (IdContenu, NoJoueur)
-  2  	VALUES (4, 3);
-
-Erreur commençant à la ligne: 85 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO CONTENU_POSSEDE (IdContenu, NoJoueur)
-	VALUES (4, 3)
-Erreur à la ligne de commande: 85 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> 
-SQL> INSERT INTO SUCCES (Titre, Description, Valeur, IdContenu)
-  2  	VALUES ('Survivre', 'Vous avez réussi à traverser la foret amazonienne', 50, 1);
-
-Erreur commençant à la ligne: 88 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO SUCCES (Titre, Description, Valeur, IdContenu)
-	VALUES ('Survivre', 'Vous avez réussi à traverser la foret amazonienne', 50, 1)
-Erreur à la ligne de commande: 88 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO SUCCES (Titre, Description, Valeur, IdContenu)
-  2  	VALUES ('Délivrance', 'Vous avez réussi à sauver Kevin', 10, 1);
-
-Erreur commençant à la ligne: 90 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO SUCCES (Titre, Description, Valeur, IdContenu)
-	VALUES ('Délivrance', 'Vous avez réussi à sauver Kevin', 10, 1)
-Erreur à la ligne de commande: 90 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO SUCCES (Titre, Description, Valeur, IdContenu)
-  2  	VALUES ('Tenace', 'Rependre le combat après une raclée', 10, 1);
-
-Erreur commençant à la ligne: 92 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO SUCCES (Titre, Description, Valeur, IdContenu)
-	VALUES ('Tenace', 'Rependre le combat après une raclée', 10, 1)
-Erreur à la ligne de commande: 92 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO SUCCES (Titre, Description, Valeur, IdContenu)
-  2  	VALUES ('Rusé', 'Résoudre l''énigme du dragon', 20, 2);
-
-Erreur commençant à la ligne: 94 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO SUCCES (Titre, Description, Valeur, IdContenu)
-	VALUES ('Rusé', 'Résoudre l''énigme du dragon', 20, 2)
-Erreur à la ligne de commande: 94 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO SUCCES (Titre, Description, Valeur, IdContenu)
-  2  	VALUES ('Agile', 'Réussir un vol plané des hautes falaises', 20, 3);
-
-Erreur commençant à la ligne: 96 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO SUCCES (Titre, Description, Valeur, IdContenu)
-	VALUES ('Agile', 'Réussir un vol plané des hautes falaises', 20, 3)
-Erreur à la ligne de commande: 96 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO SUCCES (Titre, Description, Valeur, IdContenu)
-  2  	VALUES ('Survivant', 'Survivre la première nuit dans la ville', 50, 5);
-
-Erreur commençant à la ligne: 98 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO SUCCES (Titre, Description, Valeur, IdContenu)
-	VALUES ('Survivant', 'Survivre la première nuit dans la ville', 50, 5)
-Erreur à la ligne de commande: 98 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO SUCCES (Titre, Description, Valeur, IdContenu)
-  2  	VALUES ('Mission_1', 'Vaincre le gros méchant zombie à la fin de la mission', 10, 5);
-
-Erreur commençant à la ligne: 100 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO SUCCES (Titre, Description, Valeur, IdContenu)
-	VALUES ('Mission_1', 'Vaincre le gros méchant zombie à la fin de la mission', 10, 5)
-Erreur à la ligne de commande: 100 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO SUCCES (Titre, Description, Valeur, IdContenu)
-  2  	VALUES ('Herboriste', 'Recuperer des plantes médécinales', 5, 5);
-
-Erreur commençant à la ligne: 102 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO SUCCES (Titre, Description, Valeur, IdContenu)
-	VALUES ('Herboriste', 'Recuperer des plantes médécinales', 5, 5)
-Erreur à la ligne de commande: 102 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO SUCCES (Titre, Description, Valeur, IdContenu)
-  2  	VALUES ('Super bonbonnier', 'Reussir 5X un tableau en 10 secondes', 5, 6);
-
-Erreur commençant à la ligne: 104 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO SUCCES (Titre, Description, Valeur, IdContenu)
-	VALUES ('Super bonbonnier', 'Reussir 5X un tableau en 10 secondes', 5, 6)
-Erreur à la ligne de commande: 104 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> 
-SQL> INSERT INTO SUCCES_CALCULE (IdSucces, MaximumRequis)
-  2  	VALUES (8, 10);
-
-Erreur commençant à la ligne: 107 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO SUCCES_CALCULE (IdSucces, MaximumRequis)
-	VALUES (8, 10)
-Erreur à la ligne de commande: 107 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO SUCCES_CALCULE (IdSucces, MaximumRequis)
-  2  	VALUES (9, 5);
-
-Erreur commençant à la ligne: 109 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO SUCCES_CALCULE (IdSucces, MaximumRequis)
-	VALUES (9, 5)
-Erreur à la ligne de commande: 109 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> 
-SQL> INSERT INTO SUCCES_REALISE (IdContenu, NoJoueur, IdSucces)
-  2  	VALUES (1, 1, 1);
-
-Erreur commençant à la ligne: 112 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO SUCCES_REALISE (IdContenu, NoJoueur, IdSucces)
-	VALUES (1, 1, 1)
-Erreur à la ligne de commande: 112 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO SUCCES_REALISE (IdContenu, NoJoueur, IdSucces)
-  2  	VALUES (1, 1, 2);
-
-Erreur commençant à la ligne: 114 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO SUCCES_REALISE (IdContenu, NoJoueur, IdSucces)
-	VALUES (1, 1, 2)
-Erreur à la ligne de commande: 114 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO SUCCES_REALISE (IdContenu, NoJoueur, IdSucces)
-  2  	VALUES (1, 1, 3);
-
-Erreur commençant à la ligne: 116 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO SUCCES_REALISE (IdContenu, NoJoueur, IdSucces)
-	VALUES (1, 1, 3)
-Erreur à la ligne de commande: 116 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO SUCCES_REALISE (IdContenu, NoJoueur, IdSucces)
-  2  	VALUES (1, 2, 1);
-
-Erreur commençant à la ligne: 118 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO SUCCES_REALISE (IdContenu, NoJoueur, IdSucces)
-	VALUES (1, 2, 1)
-Erreur à la ligne de commande: 118 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO SUCCES_REALISE (IdContenu, NoJoueur, IdSucces)
-  2  	VALUES (5, 2, 6);
-
-Erreur commençant à la ligne: 120 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO SUCCES_REALISE (IdContenu, NoJoueur, IdSucces)
-	VALUES (5, 2, 6)
-Erreur à la ligne de commande: 120 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> 
-SQL> INSERT INTO SUCCES_EN_COURS (IdContenu, NoJoueur, IdSucces, Compteur)
-  2  	VALUES (5, 2, 8, 7);
-
-Erreur commençant à la ligne: 123 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO SUCCES_EN_COURS (IdContenu, NoJoueur, IdSucces, Compteur)
-	VALUES (5, 2, 8, 7)
-Erreur à la ligne de commande: 123 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> 
-SQL> INSERT INTO FORFAIT (Code, Nom, Description)
-  2  	VALUES ('GOLD1', 'XBox Gold' , 'Abonnement pour jouer en ligne et avoir des promotions');
-
-Erreur commençant à la ligne: 126 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO FORFAIT (Code, Nom, Description)
-	VALUES ('GOLD1', 'XBox Gold' , 'Abonnement pour jouer en ligne et avoir des promotions')
-Erreur à la ligne de commande: 126 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO FORFAIT (Code, Nom, Description)
-  2  	VALUES ('PASS1', 'XBox Game Pass' , 'Abonnement pour 100 jeux par mois');
-
-Erreur commençant à la ligne: 128 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO FORFAIT (Code, Nom, Description)
-	VALUES ('PASS1', 'XBox Game Pass' , 'Abonnement pour 100 jeux par mois')
-Erreur à la ligne de commande: 128 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO FORFAIT (Code, Nom, Description)
-  2  	VALUES ('STAND', NULL , NULL);
-
-Erreur commençant à la ligne: 130 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO FORFAIT (Code, Nom, Description)
-	VALUES ('STAND', NULL , NULL)
-Erreur à la ligne de commande: 130 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> 
-SQL> 
-SQL> INSERT INTO PERIODE (DateDebut, DateFin, Prix, CodeForfait)
-  2  	VALUES (to_date('2020-01-01'), to_date('2020-12-31'), 85, 'GOLD1');
-
-Erreur commençant à la ligne: 134 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO PERIODE (DateDebut, DateFin, Prix, CodeForfait)
-	VALUES (to_date('2020-01-01'), to_date('2020-12-31'), 85, 'GOLD1')
-Erreur à la ligne de commande: 134 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO PERIODE (DateDebut, DateFin, Prix, CodeForfait)
-  2  	VALUES (to_date('2018-01-11'), to_date('2018-12-31'), 90, 'GOLD1');
-
-Erreur commençant à la ligne: 136 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO PERIODE (DateDebut, DateFin, Prix, CodeForfait)
-	VALUES (to_date('2018-01-11'), to_date('2018-12-31'), 90, 'GOLD1')
-Erreur à la ligne de commande: 136 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO PERIODE (DateDebut, DateFin, Prix, CodeForfait)
-  2  	VALUES (to_date('2019-06-11'), to_date('2020-12-31'), 50, 'PASS1');
-
-Erreur commençant à la ligne: 138 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO PERIODE (DateDebut, DateFin, Prix, CodeForfait)
-	VALUES (to_date('2019-06-11'), to_date('2020-12-31'), 50, 'PASS1')
-Erreur à la ligne de commande: 138 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO PERIODE (DateDebut, DateFin, Prix, CodeForfait)
-  2  	VALUES (to_date('2000-01-01'), to_date('2030-12-31'), 0, 'STAND');
-
-Erreur commençant à la ligne: 140 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO PERIODE (DateDebut, DateFin, Prix, CodeForfait)
-	VALUES (to_date('2000-01-01'), to_date('2030-12-31'), 0, 'STAND')
-Erreur à la ligne de commande: 140 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> 
-SQL> INSERT INTO PERIODE_FORFAIT_JOUEUR (IdPeriode, NoJoueur, DateAchat)
-  2  	VALUES (1, 1, to_date('2020-06-06'));
-
-Erreur commençant à la ligne: 143 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO PERIODE_FORFAIT_JOUEUR (IdPeriode, NoJoueur, DateAchat)
-	VALUES (1, 1, to_date('2020-06-06'))
-Erreur à la ligne de commande: 143 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO PERIODE_FORFAIT_JOUEUR (IdPeriode, NoJoueur, DateAchat)
-  2  	VALUES (2, 2, to_date('2018-06-06'));
-
-Erreur commençant à la ligne: 145 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO PERIODE_FORFAIT_JOUEUR (IdPeriode, NoJoueur, DateAchat)
-	VALUES (2, 2, to_date('2018-06-06'))
-Erreur à la ligne de commande: 145 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO PERIODE_FORFAIT_JOUEUR (IdPeriode, NoJoueur, DateAchat)
-  2  	VALUES (1, 3, to_date('2020-10-06'));
-
-Erreur commençant à la ligne: 147 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO PERIODE_FORFAIT_JOUEUR (IdPeriode, NoJoueur, DateAchat)
-	VALUES (1, 3, to_date('2020-10-06'))
-Erreur à la ligne de commande: 147 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO PERIODE_FORFAIT_JOUEUR (IdPeriode, NoJoueur, DateAchat)
-  2  	VALUES (1, 4, to_date('2020-02-26'));
-
-Erreur commençant à la ligne: 149 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO PERIODE_FORFAIT_JOUEUR (IdPeriode, NoJoueur, DateAchat)
-	VALUES (1, 4, to_date('2020-02-26'))
-Erreur à la ligne de commande: 149 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO PERIODE_FORFAIT_JOUEUR (IdPeriode, NoJoueur, DateAchat)
-  2  	VALUES (2, 1, to_date('2018-04-04'));
-
-Erreur commençant à la ligne: 151 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO PERIODE_FORFAIT_JOUEUR (IdPeriode, NoJoueur, DateAchat)
-	VALUES (2, 1, to_date('2018-04-04'))
-Erreur à la ligne de commande: 151 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO PERIODE_FORFAIT_JOUEUR (IdPeriode, NoJoueur, DateAchat)
-  2  	VALUES (3, 1, to_date('2019-08-05'));
-
-Erreur commençant à la ligne: 153 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO PERIODE_FORFAIT_JOUEUR (IdPeriode, NoJoueur, DateAchat)
-	VALUES (3, 1, to_date('2019-08-05'))
-Erreur à la ligne de commande: 153 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> 
-SQL> INSERT INTO RESEAU (Code, Nom, Description)
-  2  	VALUES ('LACKEN', 'Les amis du Lac Kénogami', 'Bienvenue à tous!');
-
-Erreur commençant à la ligne: 156 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO RESEAU (Code, Nom, Description)
-	VALUES ('LACKEN', 'Les amis du Lac Kénogami', 'Bienvenue à tous!')
-Erreur à la ligne de commande: 156 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO RESEAU (Code, Nom, Description, Actif)
-  2  	VALUES ('UQACBD', 'Le reseau des etudiants du 157', 'Tous les etudiants qui travaillent actuellement sur le PLSQL', 1);
-
-Erreur commençant à la ligne: 158 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO RESEAU (Code, Nom, Description, Actif)
-	VALUES ('UQACBD', 'Le reseau des etudiants du 157', 'Tous les etudiants qui travaillent actuellement sur le PLSQL', 1)
-Erreur à la ligne de commande: 158 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO RESEAU (Code, Nom, Description, Actif)
-  2  	VALUES ('FRANCO', 'Le reseau des francophones', 'Ici, pas de Bienvenue-Hi!', 0);
-
-Erreur commençant à la ligne: 160 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO RESEAU (Code, Nom, Description, Actif)
-	VALUES ('FRANCO', 'Le reseau des francophones', 'Ici, pas de Bienvenue-Hi!', 0)
-Erreur à la ligne de commande: 160 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> 
-SQL> INSERT INTO ABONNEMENT_RESEAU (CodeReseau, NoJoueur)
-  2  	VALUES ('LACKEN', 1);
-
-Erreur commençant à la ligne: 163 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO ABONNEMENT_RESEAU (CodeReseau, NoJoueur)
-	VALUES ('LACKEN', 1)
-Erreur à la ligne de commande: 163 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO ABONNEMENT_RESEAU (CodeReseau, NoJoueur)
-  2  	VALUES ('UQACBD', 1);
-
-Erreur commençant à la ligne: 165 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO ABONNEMENT_RESEAU (CodeReseau, NoJoueur)
-	VALUES ('UQACBD', 1)
-Erreur à la ligne de commande: 165 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO ABONNEMENT_RESEAU (CodeReseau, NoJoueur)
-  2  	VALUES ('FRANCO', 1);
-
-Erreur commençant à la ligne: 167 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO ABONNEMENT_RESEAU (CodeReseau, NoJoueur)
-	VALUES ('FRANCO', 1)
-Erreur à la ligne de commande: 167 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO ABONNEMENT_RESEAU (CodeReseau, NoJoueur)
-  2  	VALUES ('FRANCO', 2);
-
-Erreur commençant à la ligne: 169 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO ABONNEMENT_RESEAU (CodeReseau, NoJoueur)
-	VALUES ('FRANCO', 2)
-Erreur à la ligne de commande: 169 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO ABONNEMENT_RESEAU (CodeReseau, NoJoueur)
-  2  	VALUES ('FRANCO', 3);
-
-Erreur commençant à la ligne: 171 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO ABONNEMENT_RESEAU (CodeReseau, NoJoueur)
-	VALUES ('FRANCO', 3)
-Erreur à la ligne de commande: 171 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO ABONNEMENT_RESEAU (CodeReseau, NoJoueur)
-  2  	VALUES ('UQACBD', 4);
-
-Erreur commençant à la ligne: 173 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO ABONNEMENT_RESEAU (CodeReseau, NoJoueur)
-	VALUES ('UQACBD', 4)
-Erreur à la ligne de commande: 173 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO ABONNEMENT_RESEAU (CodeReseau, NoJoueur)
-  2  	VALUES ('UQACBD', 5);
-
-Erreur commençant à la ligne: 175 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO ABONNEMENT_RESEAU (CodeReseau, NoJoueur)
-	VALUES ('UQACBD', 5)
-Erreur à la ligne de commande: 175 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> 
-SQL> INSERT INTO STATUT_AMITIE (CodeStatut, Description)
-  2  	VALUES ('NOU', 'Nouveau ami');
-
-Erreur commençant à la ligne: 178 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO STATUT_AMITIE (CodeStatut, Description)
-	VALUES ('NOU', 'Nouveau ami')
-Erreur à la ligne de commande: 178 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO STATUT_AMITIE (CodeStatut, Description)
-  2  	VALUES ('FIN', 'Fin de l''amitié');
-
-Erreur commençant à la ligne: 180 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO STATUT_AMITIE (CodeStatut, Description)
-	VALUES ('FIN', 'Fin de l''amitié')
-Erreur à la ligne de commande: 180 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO STATUT_AMITIE (CodeStatut, Description)
-  2  	VALUES ('REL', 'Rel. distante seulement');
-
-Erreur commençant à la ligne: 182 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO STATUT_AMITIE (CodeStatut, Description)
-	VALUES ('REL', 'Rel. distante seulement')
-Erreur à la ligne de commande: 182 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO STATUT_AMITIE (CodeStatut, Description)
-  2  	VALUES ('PRO', 'Rel. professionnelle');
-
-Erreur commençant à la ligne: 184 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO STATUT_AMITIE (CodeStatut, Description)
-	VALUES ('PRO', 'Rel. professionnelle')
-Erreur à la ligne de commande: 184 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> 
-SQL> INSERT INTO AMI (NoJoueurInvitant, NoJoueurInvite, DateDebut, CodeStatut)
-  2  	VALUES (1, 2, to_date('2019-06-08'), 'NOU');
-
-Erreur commençant à la ligne: 187 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO AMI (NoJoueurInvitant, NoJoueurInvite, DateDebut, CodeStatut)
-	VALUES (1, 2, to_date('2019-06-08'), 'NOU')
-Erreur à la ligne de commande: 187 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO AMI (NoJoueurInvitant, NoJoueurInvite, DateDebut, CodeStatut)
-  2  	VALUES (1, 6, to_date('2019-06-10'), 'FIN');
-
-Erreur commençant à la ligne: 189 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO AMI (NoJoueurInvitant, NoJoueurInvite, DateDebut, CodeStatut)
-	VALUES (1, 6, to_date('2019-06-10'), 'FIN')
-Erreur à la ligne de commande: 189 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO AMI (NoJoueurInvitant, NoJoueurInvite, DateDebut, CodeStatut)
-  2  	VALUES (2, 3, to_date('2019-01-01'), 'NOU');
-
-Erreur commençant à la ligne: 191 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO AMI (NoJoueurInvitant, NoJoueurInvite, DateDebut, CodeStatut)
-	VALUES (2, 3, to_date('2019-01-01'), 'NOU')
-Erreur à la ligne de commande: 191 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO AMI (NoJoueurInvitant, NoJoueurInvite, DateDebut, CodeStatut)
-  2  	VALUES (2, 4, to_date('2019-02-02'), 'NOU');
-
-Erreur commençant à la ligne: 193 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO AMI (NoJoueurInvitant, NoJoueurInvite, DateDebut, CodeStatut)
-	VALUES (2, 4, to_date('2019-02-02'), 'NOU')
-Erreur à la ligne de commande: 193 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO AMI (NoJoueurInvitant, NoJoueurInvite, DateDebut, CodeStatut)
-  2  	VALUES (2, 5, to_date('2019-03-03'), 'PRO');
-
-Erreur commençant à la ligne: 195 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO AMI (NoJoueurInvitant, NoJoueurInvite, DateDebut, CodeStatut)
-	VALUES (2, 5, to_date('2019-03-03'), 'PRO')
-Erreur à la ligne de commande: 195 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO AMI (NoJoueurInvitant, NoJoueurInvite, DateDebut, CodeStatut)
-  2  	VALUES (6, 2, to_date('2019-04-04'), 'REL');
-
-Erreur commençant à la ligne: 197 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO AMI (NoJoueurInvitant, NoJoueurInvite, DateDebut, CodeStatut)
-	VALUES (6, 2, to_date('2019-04-04'), 'REL')
-Erreur à la ligne de commande: 197 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> INSERT INTO AMI (NoJoueurInvitant, NoJoueurInvite, DateDebut, CodeStatut)
-  2  	VALUES (3, 6, to_date('2019-06-04'), 'NOU');
-
-Erreur commençant à la ligne: 199 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Dans la commande -
-INSERT INTO AMI (NoJoueurInvitant, NoJoueurInvite, DateDebut, CodeStatut)
-	VALUES (3, 6, to_date('2019-06-04'), 'NOU')
-Erreur à la ligne de commande: 199 Colonne: 1 Fichier @ file:/C:/Users/utilisateur/Downloads/travail2/SQL_DEPART/creation_donnees.sql
-Rapport d'erreur -
-Erreur SQL : Connexion interrompue
-SQL> 
-SQL> spool off

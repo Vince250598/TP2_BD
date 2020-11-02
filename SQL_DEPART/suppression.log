@@ -277,74 +277,32 @@ SQL> REM TRIGGER DES SEQUENCES
 SQL> 
 SQL> DROP TRIGGER JEU_ID_TRG;
 
-Erreur commençant à la ligne: 5 Fichier @ C:\Users\utilisateur\Downloads\travail2\SQL_DEPART\scripts\suppression_declencheurs.sql
-Dans la commande -
-DROP TRIGGER JEU_ID_TRG
-Rapport d'erreur -
-ORA-04080: déclencheur 'JEU_ID_TRG' n'existe pas
-04080. 00000 -  "trigger '%s' does not exist"
-*Cause:    The TRIGGER name is invalid.
-*Action:   Check the trigger name.
+Trigger JEU_ID_TRG supprimé(e).
+
 SQL> DROP TRIGGER CONTENU_ID_TRG;
 
-Erreur commençant à la ligne: 6 Fichier @ C:\Users\utilisateur\Downloads\travail2\SQL_DEPART\scripts\suppression_declencheurs.sql
-Dans la commande -
-DROP TRIGGER CONTENU_ID_TRG
-Rapport d'erreur -
-ORA-04080: déclencheur 'CONTENU_ID_TRG' n'existe pas
-04080. 00000 -  "trigger '%s' does not exist"
-*Cause:    The TRIGGER name is invalid.
-*Action:   Check the trigger name.
+Trigger CONTENU_ID_TRG supprimé(e).
+
 SQL> DROP TRIGGER SUCCES_ID_TRG;
 
-Erreur commençant à la ligne: 7 Fichier @ C:\Users\utilisateur\Downloads\travail2\SQL_DEPART\scripts\suppression_declencheurs.sql
-Dans la commande -
-DROP TRIGGER SUCCES_ID_TRG
-Rapport d'erreur -
-ORA-04080: déclencheur 'SUCCES_ID_TRG' n'existe pas
-04080. 00000 -  "trigger '%s' does not exist"
-*Cause:    The TRIGGER name is invalid.
-*Action:   Check the trigger name.
+Trigger SUCCES_ID_TRG supprimé(e).
+
 SQL> DROP TRIGGER PERIODE_ID_TRG;
 
-Erreur commençant à la ligne: 8 Fichier @ C:\Users\utilisateur\Downloads\travail2\SQL_DEPART\scripts\suppression_declencheurs.sql
-Dans la commande -
-DROP TRIGGER PERIODE_ID_TRG
-Rapport d'erreur -
-ORA-04080: déclencheur 'PERIODE_ID_TRG' n'existe pas
-04080. 00000 -  "trigger '%s' does not exist"
-*Cause:    The TRIGGER name is invalid.
-*Action:   Check the trigger name.
+Trigger PERIODE_ID_TRG supprimé(e).
+
 SQL> DROP TRIGGER JOUEUR_ID_TRG;
 
-Erreur commençant à la ligne: 9 Fichier @ C:\Users\utilisateur\Downloads\travail2\SQL_DEPART\scripts\suppression_declencheurs.sql
-Dans la commande -
-DROP TRIGGER JOUEUR_ID_TRG
-Rapport d'erreur -
-ORA-04080: déclencheur 'JOUEUR_ID_TRG' n'existe pas
-04080. 00000 -  "trigger '%s' does not exist"
-*Cause:    The TRIGGER name is invalid.
-*Action:   Check the trigger name.
+Trigger JOUEUR_ID_TRG supprimé(e).
+
 SQL> DROP TRIGGER SUIVI_AMITIE_ID_TRG;
 
-Erreur commençant à la ligne: 10 Fichier @ C:\Users\utilisateur\Downloads\travail2\SQL_DEPART\scripts\suppression_declencheurs.sql
-Dans la commande -
-DROP TRIGGER SUIVI_AMITIE_ID_TRG
-Rapport d'erreur -
-ORA-04080: déclencheur 'SUIVI_AMITIE_ID_TRG' n'existe pas
-04080. 00000 -  "trigger '%s' does not exist"
-*Cause:    The TRIGGER name is invalid.
-*Action:   Check the trigger name.
+Trigger SUIVI_AMITIE_ID_TRG supprimé(e).
+
 SQL> DROP TRIGGER SUIVI_RESEAU_ID_TRG;
 
-Erreur commençant à la ligne: 11 Fichier @ C:\Users\utilisateur\Downloads\travail2\SQL_DEPART\scripts\suppression_declencheurs.sql
-Dans la commande -
-DROP TRIGGER SUIVI_RESEAU_ID_TRG
-Rapport d'erreur -
-ORA-04080: déclencheur 'SUIVI_RESEAU_ID_TRG' n'existe pas
-04080. 00000 -  "trigger '%s' does not exist"
-*Cause:    The TRIGGER name is invalid.
-*Action:   Check the trigger name.
+Trigger SUIVI_RESEAU_ID_TRG supprimé(e).
+
 SQL> 
 SQL> DROP TRIGGER NOUVEAU_SUCCES_EN_COURS_TRG 
   2  DROP TRIGGER GENRE_TRG
@@ -552,39 +510,39 @@ SQL> DELETE FROM STATUT_AMITIE;
 
 SQL> DELETE FROM AMI;
 
-0 lignes supprimé.
+7 lignes supprimé.
 
 SQL> DELETE FROM SUCCES_REALISE;
 
-0 lignes supprimé.
+5 lignes supprimé.
 
 SQL> DELETE FROM SUCCES_EN_COURS;
 
-0 lignes supprimé.
+1 ligne supprimé.
 
 SQL> DELETE FROM SUCCES_CALCULE;
 
-0 lignes supprimé.
+2 lignes supprimé.
 
 SQL> DELETE FROM SUCCES;
 
-0 lignes supprimé.
+9 lignes supprimé.
 
 SQL> DELETE FROM CONTENU_POSSEDE;
 
-0 lignes supprimé.
+10 lignes supprimé.
 
 SQL> DELETE FROM CONTENU;
 
-0 lignes supprimé.
+6 lignes supprimé.
 
 SQL> DELETE FROM PERIODE_FORFAIT_JOUEUR;
 
-0 lignes supprimé.
+6 lignes supprimé.
 
 SQL> DELETE FROM PERIODE;
 
-0 lignes supprimé.
+4 lignes supprimé.
 
 SQL> DELETE FROM FORFAIT;
 
@@ -596,23 +554,23 @@ SQL> DELETE FROM SUIVI_RESEAU;
 
 SQL> DELETE FROM ABONNEMENT_RESEAU;
 
-0 lignes supprimé.
+7 lignes supprimé.
 
 SQL> DELETE FROM RESEAU;
 
-0 lignes supprimé.
+3 lignes supprimé.
 
 SQL> DELETE FROM SOUS_GENRE_JEU;
 
-0 lignes supprimé.
+2 lignes supprimé.
 
 SQL> DELETE FROM JOUEUR;
 
-0 lignes supprimé.
+6 lignes supprimé.
 
 SQL> DELETE FROM JEU;
 
-0 lignes supprimé.
+3 lignes supprimé.
 
 SQL> DELETE FROM GENRE;
 
