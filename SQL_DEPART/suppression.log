@@ -327,23 +327,8 @@ SQL> REM SUPPRESSION DES PROCEDURES
 SQL> 
 SQL> DROP PROCEDURE ajoutForfait;
 
-Erreur commençant à la ligne: 3 Fichier @ C:\Users\utilisateur\Downloads\travail2\SQL_DEPART\scripts\suppression_procedures.sql
-Dans la commande -
-DROP PROCEDURE ajoutForfait
-Rapport d'erreur -
-ORA-04043: objet AJOUTFORFAIT inexistant
-04043. 00000 -  "object %s does not exist"
-*Cause:    An object name was specified that was not recognized by the system.
-           There are several possible causes:
-           - An invalid name for a table, view, sequence, procedure, function,
-           package, or package body was entered. Since the system could not
-           recognize the invalid name, it responded with the message that the
-           named object does not exist.
-           - An attempt was made to rename an index or a cluster, or some
-           other object that cannot be renamed.
-*Action:   Check the spelling of the named object and rerun the code. (Valid
-           names of tables, views, functions, etc. can be listed by querying
-           the data dictionary.)
+Procedure AJOUTFORFAIT supprimé(e).
+
 SQL> DROP PROCEDURE prolongationForfait;
 
 Erreur commençant à la ligne: 4 Fichier @ C:\Users\utilisateur\Downloads\travail2\SQL_DEPART\scripts\suppression_procedures.sql
@@ -365,42 +350,12 @@ ORA-04043: objet PROLONGATIONFORFAIT inexistant
            the data dictionary.)
 SQL> DROP PROCEDURE ajusterPromotion;
 
-Erreur commençant à la ligne: 5 Fichier @ C:\Users\utilisateur\Downloads\travail2\SQL_DEPART\scripts\suppression_procedures.sql
-Dans la commande -
-DROP PROCEDURE ajusterPromotion
-Rapport d'erreur -
-ORA-04043: objet AJUSTERPROMOTION inexistant
-04043. 00000 -  "object %s does not exist"
-*Cause:    An object name was specified that was not recognized by the system.
-           There are several possible causes:
-           - An invalid name for a table, view, sequence, procedure, function,
-           package, or package body was entered. Since the system could not
-           recognize the invalid name, it responded with the message that the
-           named object does not exist.
-           - An attempt was made to rename an index or a cluster, or some
-           other object that cannot be renamed.
-*Action:   Check the spelling of the named object and rerun the code. (Valid
-           names of tables, views, functions, etc. can be listed by querying
-           the data dictionary.)
+Procedure AJUSTERPROMOTION supprimé(e).
+
 SQL> DROP PROCEDURE suppressionJeu;
 
-Erreur commençant à la ligne: 6 Fichier @ C:\Users\utilisateur\Downloads\travail2\SQL_DEPART\scripts\suppression_procedures.sql
-Dans la commande -
-DROP PROCEDURE suppressionJeu
-Rapport d'erreur -
-ORA-04043: objet SUPPRESSIONJEU inexistant
-04043. 00000 -  "object %s does not exist"
-*Cause:    An object name was specified that was not recognized by the system.
-           There are several possible causes:
-           - An invalid name for a table, view, sequence, procedure, function,
-           package, or package body was entered. Since the system could not
-           recognize the invalid name, it responded with the message that the
-           named object does not exist.
-           - An attempt was made to rename an index or a cluster, or some
-           other object that cannot be renamed.
-*Action:   Check the spelling of the named object and rerun the code. (Valid
-           names of tables, views, functions, etc. can be listed by querying
-           the data dictionary.)
+Procedure SUPPRESSIONJEU supprimé(e).
+
 SQL> @scripts/suppression_fonctions.sql
 SQL> REM SUPPRESSION DES FONCTIONS
 SQL> 
@@ -502,7 +457,7 @@ SQL> REM SUPPRESSION DES DONNÉES
 SQL> 
 SQL> DELETE FROM SUIVI_AMITIE;
 
-0 lignes supprimé.
+7 lignes supprimé.
 
 SQL> DELETE FROM STATUT_AMITIE;
 
@@ -510,7 +465,13 @@ SQL> DELETE FROM STATUT_AMITIE;
 
 SQL> DELETE FROM AMI;
 
-7 lignes supprimé.
+Erreur commençant à la ligne: 5 Fichier @ C:\Users\utilisateur\Downloads\travail2\SQL_DEPART\suppression_donnees.sql
+Dans la commande -
+DELETE FROM AMI
+Rapport d'erreur -
+ORA-01400: impossible d'insérer NULL dans ("TRD157_2020_10"."SUIVI_AMITIE"."IDSUIVI")
+ORA-06512: à "TRD157_2020_10.SUIVI_AMI_TRG", ligne 14
+ORA-04088: erreur lors d'exécution du déclencheur 'TRD157_2020_10.SUIVI_AMI_TRG'
 
 SQL> DELETE FROM SUCCES_REALISE;
 
@@ -522,11 +483,11 @@ SQL> DELETE FROM SUCCES_EN_COURS;
 
 SQL> DELETE FROM SUCCES_CALCULE;
 
-2 lignes supprimé.
+1 ligne supprimé.
 
 SQL> DELETE FROM SUCCES;
 
-9 lignes supprimé.
+8 lignes supprimé.
 
 SQL> DELETE FROM CONTENU_POSSEDE;
 
@@ -534,7 +495,7 @@ SQL> DELETE FROM CONTENU_POSSEDE;
 
 SQL> DELETE FROM CONTENU;
 
-6 lignes supprimé.
+5 lignes supprimé.
 
 SQL> DELETE FROM PERIODE_FORFAIT_JOUEUR;
 
@@ -550,7 +511,7 @@ SQL> DELETE FROM FORFAIT;
 
 SQL> DELETE FROM SUIVI_RESEAU;
 
-0 lignes supprimé.
+3 lignes supprimé.
 
 SQL> DELETE FROM ABONNEMENT_RESEAU;
 
@@ -570,7 +531,7 @@ SQL> DELETE FROM JOUEUR;
 
 SQL> DELETE FROM JEU;
 
-3 lignes supprimé.
+2 lignes supprimé.
 
 SQL> DELETE FROM GENRE;
 
