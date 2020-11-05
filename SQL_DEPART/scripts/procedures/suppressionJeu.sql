@@ -1,7 +1,7 @@
 SET SERVEROUTPUT ON
 CREATE OR REPLACE PROCEDURE suppressionJeu(
-    NomDuJeu IN JEU.NOM%TYPE,
-    CodeExecution OUT NUMBER
+    CodeExecution OUT NUMBER,
+    NomDuJeu IN JEU.NOM%TYPE
     )
 IS
     JeuExiste NUMBER;
