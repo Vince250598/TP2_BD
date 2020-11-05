@@ -43,9 +43,7 @@ BEGIN
     
     COMMIT;
     
-    CodeExecution := 0;
-    DBMS_OUTPUT.PUT_LINE('ca fonctinnne');
-    
+    CodeExecution := 0;    
     
 END;
 /
