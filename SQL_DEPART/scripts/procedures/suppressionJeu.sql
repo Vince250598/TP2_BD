@@ -28,22 +28,26 @@ BEGIN
     
     SELECT IDJEU INTO IdJeuASupprimer FROM JEU WHERE NOM = NomDuJeu;
     
+        BEGIN
+            SAVEPOINT before_delete;
     
-    SET TRANSACTION NAME 'suppressionJeuTransaction';
+            DELETE SOUS_GENRE_JEU WHERE IDJEU = IdJeuASupprimer;
     
-        DELETE SOUS_GENRE_JEU WHERE IDJEU = IdJeuASupprimer;
+            DELETE SUCCES_CALCULE WHERE IDSUCCES = (SELECT SUCCES.IDSUCCES FROM SUCCES WHERE SUCCES.IDCONTENU = (SELECT CONTENU.IDCONTENU FROM CONTENU WHERE CONTENU.IDJEU = IdJeuASupprimer));
     
-        DELETE SUCCES_CALCULE WHERE IDSUCCES = (SELECT SUCCES.IDSUCCES FROM SUCCES WHERE SUCCES.IDCONTENU = (SELECT CONTENU.IDCONTENU FROM CONTENU WHERE CONTENU.IDJEU = IdJeuASupprimer));
+            DELETE SUCCES WHERE SUCCES.IDCONTENU = (SELECT CONTENU.IDCONTENU FROM CONTENU WHERE CONTENU.IDJEU = IdJeuASupprimer);
     
-        DELETE SUCCES WHERE SUCCES.IDCONTENU = (SELECT CONTENU.IDCONTENU FROM CONTENU WHERE CONTENU.IDJEU = IdJeuASupprimer);
+            DELETE CONTENU WHERE IDJEU = IdJeuASupprimer;
     
-        DELETE CONTENU WHERE IDJEU = IdJeuASupprimer;
-    
-        DELETE JEU WHERE NOM = NomDuJeu;
-    
-    COMMIT;
-    
-    CodeExecution := 0;    
-    
+            DELETE JEU WHERE NOM = NomDuJeu;
+            
+            CodeExecution := 0; 
+            
+        EXCEPTION
+        
+        WHEN OTHERS THEN
+            ROLLBACK TO before_delete;
+            CodeExecution := 3;
+        END;
 END;
 /

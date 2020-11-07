@@ -16,7 +16,7 @@ BEGIN
         NomForfait := 'DEFAULT';
     END IF;
     
-    INSERT INTO FORFAIT VALUES (Code, Nom, Description);
+    INSERT INTO FORFAIT VALUES (Code, NomForfait, Description);
     INSERT INTO PERIODE (DATEDEBUT, DATEFIN, PRIX, CODEFORFAIT) VALUES (Today, add_months(Today, 12), Prix, Code);
     
 END;
